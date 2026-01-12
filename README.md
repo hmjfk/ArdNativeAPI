@@ -1,7 +1,5 @@
 # ArdNativeAPI
 ArduinoをAPIとして使えるようにする部品集
-> [!WARNING]
-> まだ開発中で安定していないため、 使用すると **機器本体の故障** を招く可能性があることに注意を喚起する。
 
 ## 概要
 > [!NOTE]
@@ -49,12 +47,12 @@ git clone https://github.com/hmjfk/ArdNativeAPI.git
                                             .ZIP形式のライブラリをインストール…         ←ここ
 ~~~
 を選択して、先ほど保存した場所を選択する。  
-4. repoにある`platform.local.txt`の設定を機種ごとに追加する。場所は次の通り。    
-macOS: `/Applications/Arduino.app/Contents/Java/hardware/arduino/`  
+4. repoにある`platform.local.txt`の設定を追加する。場所はOSごとに次の通りである。 
 Windows: `%APPDATA%\..\local\Arduino15\packages\`  
-GNU/Linux: `/home/ <User-name> /.arduino15/packages/arduino/hardware`  
+MacOS: : `~/Library/arduino15/packages/arduino/hardware`  
+GNU/Linux: `~/.arduino15/packages/arduino/hardware`  
 ## 仕組み
-Arduinoでは、`Arduino.h`を明示的に取り込むと、Arduinoが本来行っている翻訳前の事前処理が無効になるという性質がある。本部品集はこの性質に着目して、`Arduino.h`を部品集内で明示的に取り込んだ上で、利用者がmain関数を定義することによって、事前定義されているmain関数を無効化しているのである。
+Arduinoでは、`Arduino.h`を明示的に取り込むと、Arduinoが本来行っている翻訳前の事前処理が無効になるという性質がある。これは、AVR boardにて有効化されているLTOの効果によるものであると考えられる。本部品集はこの性質に着目して、`Arduino.h`を部品集内で明示的に取り込んだ上で、利用者がmain関数を定義することによって、事前定義されているmain関数を無効化しているのである。AVR以外のboardではLTOが機能しないため、[使用方法](##使用方法)4.の場所にあるArduino-CoreAPIの`main.cpp`を削除する必要がある。
 当然、`void setup()`及び`void loop()`の呼出もmain関数に含まれているので、無効にできるのだ。
 
 ## 利用許諾
