@@ -1,0 +1,25 @@
+# for C2y keywords syntax highlight
+## data types
+KEYWORD1 _BitInt
+KEYWORD1 _Sat
+KEYWORD1 _Fract
+KEYWORD1 _Accum
+KEYWORD1 restrict
+KEYWORD1 register
+KEYWORD1 _Atomic
+KEYWORD1 _Complex
+
+## structures
+KEYWORD3 defer
+KEYWORD3 typeof
+KEYWORD3 typeof_unqual
+KEYWORD3 static_assert
+KEYWORD3 _Countof
+
+# for C++26 syntax highlight
+KEYWORD1 consteval
+KEYWORD1 constinit
+
+KEYWORD3 contract_assert
+co_await co_return co_yield mutable
+this
