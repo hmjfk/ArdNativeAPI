@@ -73,7 +73,7 @@
 #undef LSBFIRST
 #undef MSBFIRST
 
-#if !__has_include(<ArduinoAPI.h>)
+#if !__has_include(<api/Common.h>)
 typedef enum : uint8_t
 {
   LOW     = 0,
