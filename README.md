@@ -48,6 +48,7 @@ git clone https://github.com/hmjfk/ArdNativeAPI.git
 ~~~
 を選択して、先ほど保存した場所を選択する。  
 4. repoにある`platform.local.txt`の設定を追加する。場所はOSごとに次の通りである。 
+
 Windows: `%APPDATA%\..\local\Arduino15\packages\`  
 MacOS: : `~/Library/arduino15/packages/arduino/hardware`  
 GNU/Linux: `~/.arduino15/packages/arduino/hardware`  
