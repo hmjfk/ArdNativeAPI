@@ -1,6 +1,6 @@
 # ArdNative default built setting
 # see https://github.com/arduino/ArduinoCore-avr/blob/master/platform.txt
-compiler.c.extra_flags=-c -Os {compiler.warning_flags.all} -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects
+compiler.c.extra_flags={compiler.warning_flags.all} -std=gnu11
 # ここにinclude pathを追加すれば、拡張子なしのheaderが読めるようになる。
 # -I{runtime.tools.avr-gcc.path}/
-compiler.cpp.extra_flags=-c -Os {compiler.warning_flags.all} -std=gnu++17 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects
+compiler.cpp.extra_flags=-{compiler.warning_flags.all} -std=gnu++17
