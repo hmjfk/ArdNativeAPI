@@ -72,7 +72,7 @@
 
 #undef LSBFIRST
 #undef MSBFIRST
-
+#if !__has_include(<ArduinoAPI.h>)
 typedef enum : uint8_t
 {
   LOW     = 0,
@@ -91,17 +91,18 @@ typedef enum : uint8_t
   OUTPUT_OPENDRAIN = 0x4,
 } PinMode;
 
-enum : bool
-{
-  SERIAL = false,
-  DISPLAY = true,
-};
-
 typedef enum
 {
   LSBFIRST = 0,
   MSBFIRST = 1,
 } BitOrder;
+#endif
+
+enum : bool
+{
+  SERIAL = false,
+  DISPLAY = true,
+};
 
 enum
 {
@@ -110,7 +111,6 @@ enum
   OCT = 8,
   BIN = 2
 };
-
 
 #undef LED_BULIDIN
 #if defined (ARD_AVR_ROBOT_MOTOR) || defined(ARD_AVR_ROBOT_CONTROL)
