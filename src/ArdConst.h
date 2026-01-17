@@ -152,5 +152,5 @@ constexpr uint8_t LED_BULIDIN = 25;
 #else // standard
 constexpr uint8_t LED_BULIDIN = 13;
 
-#endif // end borads if
 #endif // end LED_BULIDIN defined
+#endif // end ARDCONST_H
