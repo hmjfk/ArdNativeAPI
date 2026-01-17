@@ -55,7 +55,40 @@ typedef bool                    boolean;
 [[deprecated]] typedef uint8_t  byte;
 [[deprecated]] typedef uint16_t word;
 
-
+#if __has_include(<WCharacter.h>)
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isAlphaNumeric(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isAlpha(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isAscii(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isWhitespace(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isControl(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isDigit(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isGraph(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isLowerCase(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isPrintable(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isPunct(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isSpace(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isUpperCase(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline bool isHexadecimalDigit(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline int toAscii(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline int toLowerCase(int c);
+[[deprecated("Instead, please use the <ctype.h> function.")]]
+inline int toUpperCase(int c);
+#endif
 // C++標準で定義される関数などはマクロを外して非推奨。
 
 #if defined(abs)
@@ -89,10 +122,4 @@ extern HardwareSerial Serial2;
 [[deprecated("Please use the HardwareSerial class directly instead of an instance of the `Serial3`.")]]
 extern HardwareSerial Serial3;
 */
-[[deprecated("Instead, please use the `tolower` function from <ctype.h>.")]]
-inline int toLowerCase(int c);
-
-[[deprecated("Instead, please use the `toupper` function from <ctype.h>.")]]
-inline int toUpperCase(int c);
-
 #endif // end ARDDEP_H header
