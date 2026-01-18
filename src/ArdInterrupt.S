@@ -35,7 +35,7 @@ interrupts:
 #elif defined(__arm__)
     cpsie i
 #elif defined(__XTENSA__)
-    rsil    a8, 0 ; set 0
+    rsil    a8, 0 // set 0
 #endif
 
 #if defined(__AVR__) && defined(__Z80__)
@@ -55,7 +55,7 @@ noInterrupts:
 #elif defined(__arm__)
     cpsie i
 #elif defined(__XTENSA__)
-    rsil    a8, 3 ; set 3
+    rsil    a8, 3 // set 3
 #endif
 
 #if defined(__AVR__) && defined(__Z80__)
