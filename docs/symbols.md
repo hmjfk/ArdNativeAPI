@@ -106,14 +106,6 @@ static const uint8_t MOSI  =  /* unspecified */ ;
 static const uint8_t MISO  =  /* unspecified */ ;
 static const uint8_t SCK   =  /* unspecified */ ;
 ```
-
-### <itoa.h>
-```C
-char* itoa(int value, char* string, int radix);
-char* ltoa(long value, char* string, int radix);
-char* utoa(unsigned value, char* string, int radix);
-char* ultoa(unsigned long value, char* string, int radix);
-```
 ### <WString.h>
 
 ```C++
