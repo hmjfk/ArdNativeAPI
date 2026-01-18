@@ -53,7 +53,7 @@ noInterrupts:
 #elif defined(__Z80__)
     di
 #elif defined(__arm__)
-    cpsie i
+    cpsid i
 #elif defined(__XTENSA__)
     rsil    a8, 3 // set 3
 #endif
