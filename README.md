@@ -50,7 +50,7 @@ git clone https://github.com/hmjfk/ArdNativeAPI.git
 4. repoにある`platform.local.txt`の設定を追加する。場所はOSごとに次の通りである。 
 
 Windows: `%APPDATA%\..\local\Arduino15\packages\`  
-MacOS: : `~/Library/arduino15/packages/arduino/hardware`  
+MacOS: `~/Library/arduino15/packages/arduino/hardware`  
 GNU/Linux: `~/.arduino15/packages/arduino/hardware`  
 ## 仕組み
 Arduinoでは、`Arduino.h`を明示的に取り込むと、Arduinoが本来行っている翻訳前の事前処理が無効になるという性質がある。これは、AVR boardにて有効化されているLTOの効果によるものであると考えられる。本部品集はこの性質に着目して、`Arduino.h`を部品集内で明示的に取り込んだ上で、利用者がmain関数を定義することによって、事前定義されているmain関数を無効化しているのである。AVR以外のboardではLTOが機能しないため、[使用方法](##使用方法)4.の場所にあるArduino-CoreAPIの`main.cpp`を削除する必要がある。
