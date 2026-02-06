@@ -42,19 +42,19 @@
 
 #include <stdint.h>
 #include <string.h>
+
 // Define constants and variables for buffering incoming serial data.  We're
 // using a ring buffer (I think), in which head is the index of the location
 // to which to write the next incoming character and tail is the index of the
 // location from which to read.
-
 template <int N>
 class RingBuffer
 {
   public:
-    uint8_t _aucBuffer[N];
-    volatile int _iHead;
-    volatile int _iTail;
-    volatile int _numElems;
+    uint8_t aucBuffer[N];
+    volatile int iHead;
+    volatile int iTail;
+    volatile int numElems;
 
   public:
     RingBuffer();
@@ -68,13 +68,13 @@ class RingBuffer
 
   private:
     int nextIndex(int index);
-    inline bool isEmpty() const { return (_numElems == 0); }
+    inline bool isEmpty() const { return (numElems == 0); }
 };
 
 template <int N>
 RingBuffer<N>::RingBuffer()
 {
-    memset( _aucBuffer, 0, N ) ;
+    memset( aucBuffer, 0, N ) ;
     clear();
 }
 
@@ -87,18 +87,18 @@ void RingBuffer<N>::store_char(uint8_t c)
   // and so we don't write the character or advance the head.
   if (!isFull())
   {
-    _aucBuffer[_iHead] = c ;
-    _iHead = nextIndex(_iHead);
-    _numElems = _numElems + 1;
+    aucBuffer[iHead] = c ;
+    iHead = nextIndex(iHead);
+    numElems = numElems + 1;
   }
 }
 
 template <int N>
 void RingBuffer<N>::clear()
 {
-  _iHead = 0;
-  _iTail = 0;
-  _numElems = 0;
+  iHead = 0;
+  iTail = 0;
+  numElems = 0;
 }
 
 template <int N>
@@ -107,9 +107,9 @@ int RingBuffer<N>::read_char()
   if (isEmpty())
     return -1;
 
-  uint8_t value = _aucBuffer[_iTail];
-  _iTail = nextIndex(_iTail);
-  _numElems = _numElems - 1;
+  uint8_t value = aucBuffer[iTail];
+  iTail = nextIndex(iTail);
+  numElems = numElems - 1;
 
   return value;
 }
@@ -117,13 +117,13 @@ int RingBuffer<N>::read_char()
 template <int N>
 int RingBuffer<N>::available()
 {
-  return _numElems;
+  return numElems;
 }
 
 template <int N>
 int RingBuffer<N>::availableForStore()
 {
-  return (N - _numElems);
+  return (N - numElems);
 }
 
 template <int N>
@@ -132,7 +132,7 @@ int RingBuffer<N>::peek()
   if (isEmpty())
     return -1;
 
-  return _aucBuffer[_iTail];
+  return aucBuffer[iTail];
 }
 
 template <int N>
@@ -144,7 +144,7 @@ int RingBuffer<N>::nextIndex(int index)
 template <int N>
 bool RingBuffer<N>::isFull()
 {
-  return (_numElems == N);
+  return (numElems == N);
 }
 
 #endif /* RING_BUFFER */

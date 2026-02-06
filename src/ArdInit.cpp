@@ -42,6 +42,14 @@
 
 extern "C" {
 
+#if defined (__ZEPHYR__)
+void __loopHook();
+  #include "zephyr/kernel.h"
+  #ifdef CONFIG_LLEXT
+  #include <zephyr/llext/symbol.h>
+  #endif
+#endif
+
 
 void initCore()
 {

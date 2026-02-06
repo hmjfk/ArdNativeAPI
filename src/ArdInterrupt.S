@@ -19,13 +19,14 @@
 // Xtensa LX ABI: see https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/tools/silicon-solutions/compute-ip/isa-summary.pdf
 
 .text
-
+#if defined(__AVR__)
 .global interrupts
         .type   interrupts, @function
         .weak   interrupts
 .global noInterrupts
         .type   noInterrupts, @function
         .weak   noInterrupts
+#endif
 
 interrupts:
 #if defined(__AVR__)

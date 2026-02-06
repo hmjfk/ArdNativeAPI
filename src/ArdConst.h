@@ -113,44 +113,50 @@ enum
   BIN = 2
 };
 
-#undef LED_BULIDIN
+#undef LED_BUILTIN
 #if defined (ARD_AVR_ROBOT_MOTOR) || defined(ARD_AVR_ROBOT_CONTROL)
 // LED_BULIDIN is not defined
 #elif defined(ARD_AVR_ETHERNET)
-constexpr uint8_t LED_BULIDIN = 9;
+constexpr uint8_t LED_BUILTIN = 9;
 
 #elif defined(ARD_AVR_GEMMA)
-constexpr uint8_t LED_BULIDIN = 1;
+constexpr uint8_t LED_BUILTIN = 1;
 
 #elif 0
-constexpr uint8_t LED_BULIDIN = 32;
+constexpr uint8_t LED_BUILTIN = 32;
 
 #elif 0
-constexpr uint8_t LED_BULIDIN = 42;
+constexpr uint8_t LED_BUILTIN = 42;
 
 #elif 0
-constexpr uint8_t LED_BULIDIN = 6;
+constexpr uint8_t LED_BUILTIN = 6;
 
 #elif 0
-constexpr uint8_t LED_BULIDIN = 2;
+constexpr uint8_t LED_BUILTIN = 2;
+
+#elif defined(ARD_ARCH_RENESAS_OPTA_MUXTO)
+constexpr uint8_t LED_BUILTIN = 4;
+
+#elif defined (ARD_ARCH_RENESAS_nanor4)
+constexpr uint8_t LED_BUILTIN = 22;
+
+#elif defined (ARD_ARCH_RENESAS_PORTENTA_C33)
+constexpr uint8_t LED_BUILTIN = 35;
 
 #elif 0
-constexpr uint8_t LED_BULIDIN = 4;
+constexpr uint8_t LED_BUILTIN = 5;
 
 #elif 0
-constexpr uint8_t LED_BULIDIN = 5;
+constexpr uint8_t LED_BUILTIN = 16;
 
 #elif 0
-constexpr uint8_t LED_BULIDIN = 16;
+constexpr uint8_t LED_BUILTIN = 14;
 
-#elif 0
-constexpr uint8_t LED_BULIDIN = 14;
-
-#elif 0
-constexpr uint8_t LED_BULIDIN = 25;
+#elif defined(ARD_ZEPHYR_ARDUINO_NANO_MATTER) || defined (ARD_AVR_UNO_WIFI_REV2)
+constexpr uint8_t LED_BUILTIN = 25;
 
 #else // standard
-constexpr uint8_t LED_BULIDIN = 13;
+constexpr uint8_t LED_BUILTIN = 13;
 
 #endif // end LED_BULIDIN defined
 #endif // end ARDCONST_H
