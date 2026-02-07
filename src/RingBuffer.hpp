@@ -74,7 +74,7 @@ class RingBuffer
 template <int N>
 RingBuffer<N>::RingBuffer()
 {
-    memset( aucBuffer, 0, N ) ;
+    memset(aucBuffer, 0, N);
     clear();
 }
 

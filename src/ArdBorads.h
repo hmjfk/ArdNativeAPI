@@ -118,8 +118,62 @@ ARD_<architecture>_<name>
         #define ARD_AVR_STANDARD
     #endif // end __AVR__
 
-#elif defined(ESP8266_GENERIC)
-    #define ARD_ESP8266_GENERIC
+#elif defined (ESP8266)
+    #if defined(ESP8266_GENERIC) || defined(ESP8266_ESP01) || \
+        defined(ESP8266_ESP210) || defined(GEN4_IOD)
+        #define ARD_ESP8266_GENERIC
+    
+    #elif defined(ESP8266_ESP13)
+        #define ARD_ESP8266_ESP13
+    
+    #elif defined(ESP8266_ESP12)
+        #define ARD_ESP8266_ESP12
+
+    #elif defined(ESP8266_ESPRESSO_LITE_V1)
+        #define ARD_ESP8266_ESPRESSO_LITE_V1
+    
+    #elif defined(ESP8266_ESPRESSO_LITE_V2)
+        #define ARD_ESP8266_ESPRESSO_LITE_V2
+    
+    #elif defined(ESP8266_PHOENIX_V1)
+        #define ARD_ESP8266_PHOENIX_V1
+    
+    #elif defined(ESP8266_PHOENIX_V2)
+        #define ARD_ESP8266_PHOENIX_V2
+
+    #elif defined(ESP8266_NODEMCU)
+        #define ARD_ESP8266_NODEMCU
+    
+    #elif defined(MOD_WIFI_ESP8266)
+        #define ARD_ESP8266_MOD_WIFI
+    
+    #elif defined(ESP8266_THING) || defined(ESP8266_THING_DEV)
+        #define ARD_ESP8266_THING
+    
+    #elif defined(ESP8266_WEMOS_D1MINI) || defined(ESP8266_WEMOS_D1MINIPRO) \
+          defined(ESP8266_WEMOS_D1MINILITE)
+        #define ARD_ESP8266_WEMOS_D1MINI
+    
+    #elif defined(ESP8266_WEMOS_D1R1)
+        #define ARD_ESP8266_WEMOS_D1R1
+    
+    #elif defined(WIFINFO)
+        #define ARD_ESP8266_WIFINFO
+    
+    #elif defined(ESP8266_ARDUINO_STAR_OTTO) || defined(ESP8266_ARDUINO_UNOWIFI)
+        #define ARD_ESP8266_STAR_OTTO
+    
+    #elif define(ESP8266_ARDUINO_PRIMO)
+        #define ARD_ESP8266_PRIMO
+    
+    #elif defined(ESP8266_OAK)
+        #define ARD_ESP8266_OAK
+    
+    #elif defined(WIFIDUINO_ESP8266)
+        #define ARD_ESP8266_WIFIDUINO
+
+    #elif defined(AMPERKA_WIFI_SLOT)
+        #define ARD_ESP8266_AMPERKA_WIFI_SLOT
 
 #elif defined(ARDUINO_ARCH_RENESAS)
     #if defined(ARDUINO_PORTENTA_C33)
