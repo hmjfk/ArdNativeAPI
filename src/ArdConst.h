@@ -119,7 +119,7 @@ enum
 #elif defined(ARD_AVR_ETHERNET)
 constexpr uint8_t LED_BUILTIN = 9;
 
-#elif defined(ARD_AVR_GEMMA)
+#elif defined(ARD_AVR_GEMMA) || defined(ARD_ESP8266_GENERIC)
 constexpr uint8_t LED_BUILTIN = 1;
 
 #elif 0
@@ -146,7 +146,7 @@ constexpr uint8_t LED_BUILTIN = 35;
 #elif 0
 constexpr uint8_t LED_BUILTIN = 5;
 
-#elif 0
+#elif defined(ARD_ESP8266_ESP13)
 constexpr uint8_t LED_BUILTIN = 16;
 
 #elif 0
