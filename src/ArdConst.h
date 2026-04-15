@@ -134,19 +134,19 @@ constexpr uint8_t LED_BUILTIN = 6;
 #elif 0
 constexpr uint8_t LED_BUILTIN = 2;
 
-#elif defined(ARD_RENESAS_OPTA_MUXTO)
+#elif defined(ARD_arm_OPTA_MUXTO)
 constexpr uint8_t LED_BUILTIN = 4;
 
-#elif defined (ARD_RENESAS_nanor4)
+#elif defined (ARD_arm_nanor4)
 constexpr uint8_t LED_BUILTIN = 22;
 
-#elif defined (ARD_RENESAS_PORTENTA_C33)
+#elif defined (ARD_arm_PORTENTA_C33)
 constexpr uint8_t LED_BUILTIN = 35;
 
 #elif 0
 constexpr uint8_t LED_BUILTIN = 5;
 
-#elif defined(ARD_ESP8266_ESP13)
+#elif defined(ARD_XTENSA_ESP8266_ESP13)
 constexpr uint8_t LED_BUILTIN = 16;
 
 #elif 0
