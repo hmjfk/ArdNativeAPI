@@ -17,12 +17,12 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#if defined(__AVR__)
-#include "Interrupts/avr.inc"
-#elif defined(__Z80__)
-#include "Interrupts/z80.inc"
-#elif defined(__arm__)
-#include "Interrupts/arm.inc"
-#elif defined(__XTENSA__)
-#include "Interrupts/xtensa.inc"
-#endif
+// Xtensa LX ABI: see https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/tools/silicon-solutions/compute-ip/isa-summary.pdf
+
+interrupts:
+    rsil    a8, 3 // set 3
+    retw.n
+
+noInterrupts:
+    rsil    a8, 0 // set 0
+    retw.n

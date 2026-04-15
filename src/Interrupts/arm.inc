@@ -17,12 +17,10 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#if defined(__AVR__)
-#include "Interrupts/avr.inc"
-#elif defined(__Z80__)
-#include "Interrupts/z80.inc"
-#elif defined(__arm__)
-#include "Interrupts/arm.inc"
-#elif defined(__XTENSA__)
-#include "Interrupts/xtensa.inc"
-#endif
+interrupts:
+    cpsie i
+    bx lr
+
+noInterrupts:
+    cpsid i
+    bx lr
