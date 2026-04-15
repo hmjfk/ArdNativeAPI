@@ -174,6 +174,7 @@ ARD_<architecture>_<name>
 
     #elif defined(AMPERKA_WIFI_SLOT)
         #define ARD_ESP8266_AMPERKA_WIFI_SLOT
+    #endif // end ESP8266
 
 #elif defined(ARDUINO_ARCH_RENESAS)
     #if defined(ARDUINO_PORTENTA_C33)
