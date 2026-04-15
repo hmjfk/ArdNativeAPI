@@ -42,6 +42,10 @@ platform.txt:
             :
 ## board macro nameing rule
 ARD_<architecture>_<name>
+
+If you have the following comments:
+    // <architecture>=***
+For readability, indicate that the <architecture> name is changed.
 */
 
 // syxtax support: ARDUINO_
@@ -118,130 +122,131 @@ ARD_<architecture>_<name>
         #define ARD_AVR_STANDARD
     #endif // end __AVR__
 
-#elif defined (ESP8266)
+#elif defined (__XTENSA__)
     #if defined(ESP8266_GENERIC) || defined(ESP8266_ESP01) || \
         defined(ESP8266_ESP210) || defined(GEN4_IOD)
-        #define ARD_ESP8266_GENERIC
+        #define ARD_XTENSA_ESP8266_GENERIC
     
     #elif defined(ESP8266_ESP13)
-        #define ARD_ESP8266_ESP13
+        #define ARD_XTENSA_ESP8266_ESP13
     
     #elif defined(ESP8266_ESP12)
-        #define ARD_ESP8266_ESP12
+        #define ARD_XTENSA_ESP8266_ESP12
 
     #elif defined(ESP8266_ESPRESSO_LITE_V1)
-        #define ARD_ESP8266_ESPRESSO_LITE_V1
+        #define ARD_XTENSA_ESP8266_ESPRESSO_LITE_V1
     
     #elif defined(ESP8266_ESPRESSO_LITE_V2)
-        #define ARD_ESP8266_ESPRESSO_LITE_V2
+        #define ARD_XTENSA_ESP8266_ESPRESSO_LITE_V2
     
     #elif defined(ESP8266_PHOENIX_V1)
-        #define ARD_ESP8266_PHOENIX_V1
+        #define ARD_XTENSA_ESP8266_PHOENIX_V1
     
     #elif defined(ESP8266_PHOENIX_V2)
-        #define ARD_ESP8266_PHOENIX_V2
+        #define ARD_XTENSA_ESP8266_PHOENIX_V2
 
     #elif defined(ESP8266_NODEMCU)
-        #define ARD_ESP8266_NODEMCU
+        #define ARD_XTENSA_ESP8266_NODEMCU
     
     #elif defined(MOD_WIFI_ESP8266)
-        #define ARD_ESP8266_MOD_WIFI
+        #define ARD_XTENSA_MOD_WIFI_ESP8266
     
     #elif defined(ESP8266_THING) || defined(ESP8266_THING_DEV)
-        #define ARD_ESP8266_THING
+        #define ARD_XTENSA_ESP8266_THING
     
     #elif defined(ESP8266_WEMOS_D1MINI) || defined(ESP8266_WEMOS_D1MINIPRO) \
           defined(ESP8266_WEMOS_D1MINILITE)
-        #define ARD_ESP8266_WEMOS_D1MINI
+        #define ARD_XTENSA_ESP8266_WEMOS_D1MINI
     
     #elif defined(ESP8266_WEMOS_D1R1)
-        #define ARD_ESP8266_WEMOS_D1R1
+        #define ARD_XTENSA_ESP8266_WEMOS_D1R1
     
     #elif defined(WIFINFO)
-        #define ARD_ESP8266_WIFINFO
+        #define ARD_XTENSA_WIFINFO
     
     #elif defined(ESP8266_ARDUINO_STAR_OTTO) || defined(ESP8266_ARDUINO_UNOWIFI)
-        #define ARD_ESP8266_STAR_OTTO
+        #define ARD_XTENSA_ESP8266_STAR_OTTO
     
     #elif define(ESP8266_ARDUINO_PRIMO)
-        #define ARD_ESP8266_PRIMO
+        #define ARD_XTENSA_ESP8266_PRIMO
     
     #elif defined(ESP8266_OAK)
-        #define ARD_ESP8266_OAK
+        #define ARD_XTENSA_ESP8266_OAK
     
-    #elif defined(WIFIDUINO_ESP8266)
-        #define ARD_ESP8266_WIFIDUINO
+    #elif defined(WIFIDUINO_ESP8266) || defined(WIFIDUINO)
+        #define ARD_XTENSA_ESP8266_WIFIDUINO
 
     #elif defined(AMPERKA_WIFI_SLOT)
-        #define ARD_ESP8266_AMPERKA_WIFI_SLOT
-    #endif // end ESP8266
+        #define ARD_XTENSA_AMPERKA_WIFI_SLOT
+    
+    #elif defined (ESP32S3_DEV)
+        #define ARD_XTENSA_ESP32S3_DEV
 
-#elif defined(__SAMD21G18A__)
+    #endif // end __XTENSA__
+
+#elif defined(__arm__)
     #if defined (SAMD_ZERO)
-        #define ARD_SAMD_ZERO
+        #define ARD_arm_SAMD_ZERO
 
     #elif defined(SAMD_MKR1000)
-        #define ARD_SAMD_MKR1000
+        #define ARD_arm_SAMD_MKR1000
 
     #elif defined(SAMD_MKRZERO)
-        #define ARD_SAMD_MKRZERO
+        #define ARD_arm_SAMD_MKRZERO
 
     #elif defined(SAMD_MKRWIFI1010)
-        #define ARD_SAMD_MKRWIFI1010
+        #define ARD_arm_SAMD_MKRWIFI1010
 
     #elif defined(SAMD_NANO_33_IOT)
-        #define ARD_SAMD_NANO_33_IOT
+        #define ARD_arm_SAMD_NANO_33_IOT
 
     #elif defined(SAMD_MKRFox1200)
-        #define ARD_SAMD_MKRFox1200
+        #define ARD_arm_SAMD_MKRFox1200
 
     #elif defined(SAMD_MKRWAN1300) || defined(SAMD_MKRWAN1310)
-        #define ARD_SAMD_MKRWAN
+        #define ARD_arm_SAMD_MKRWAN
 
     #elif defined(SAMD_MKRGSM1400)
-        #define ARD_SAMD_NANO_33_IOT
+        #define ARD_arm_SAMD_MKRGSM1400
 
     #elif defined(SAMD_MKRNB1500)
-        #define ARD_SAMD_MKRNB1500
+        #define ARD_arm_SAMD_MKRNB1500
 
     #elif defined(SAMD_MKRVIDOR4000)
-        #define ARD_SAMD_MKRVIDOR4000
+        #define ARD_arm_SAMD_MKRVIDOR4000
 
     #elif defined(SAMD_CIRCUITPLAYGROUND_EXPRESS)
-        #define ARD_SAMD_CIRCUITPLAYGROUND_EXPRESS
+        #define ARD_arm_SAMD_CIRCUITPLAYGROUND_EXPRESS
 
     #elif defined(SAMD_TIAN)
-        #define ARD_SAMD_TIAN
+        #define ARD_arm_SAMD_TIAN
 
     #elif defined(SAM_ZERO)
-        #define ARD_SAMD_M0
-    #endif
+        #define ARD_arm_SAMD_M0
 
-#elif defined(__SAM3X8E__)
-    #define ARD_SAM_DUE
+    #elif defined(__SAM3X8E__)
+        #define ARD_arm_SAM_DUE
 
-#elif defined(ARDUINO_ARCH_RENESAS)
     #if defined(ARDUINO_PORTENTA_C33)
-        #define ARD_RENESAS_PORTENTA_C33
+        #define ARD_arm_PORTENTA_C33
 
     #elif defined(ARDUINO_MINIMA)
-        #define ARD_RENESAS_MINIMA
+        #define ARD_arm_MINIMA
     
     #elif defined(ARDUINO_UNOWIFIR4)
-        #define ARD_RENESAS_UNOWIFIR4
+        #define ARD_arm_UNOWIFIR4
     
     #elif defined(ARDUINO_nanor4)
-        #define ARD_RENESAS_nanor4
+        #define ARD_arm_nanor4
     
     #elif defined(ARDUINO_OPTA_DIGITAL)
-        #define ARD_RENESAS_OPTA_DIGITAL
+        #define ARD_arm_OPTA_DIGITAL
     
     #elif defined(ARDUINO_OPTA_ANALOG)
-        #define ARD_RENESAS_OPTA_ANALOG
+        #define ARD_arm_OPTA_ANALOG
     
     #elif defined(ARDUINO_MUXTO)
-        #define ARD_RENESAS_OPTA_MUXTO
-    #endif // end ARCH_RENESAS
-
+        #define ARD_arm_OPTA_MUXTO
+    #endif // end __arm__
 #endif // MCU if
 #endif // end ARDBORADS_H
