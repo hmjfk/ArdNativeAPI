@@ -176,27 +176,71 @@ ARD_<architecture>_<name>
         #define ARD_ESP8266_AMPERKA_WIFI_SLOT
     #endif // end ESP8266
 
+#elif defined(__SAMD21G18A__)
+    #if defined (SAMD_ZERO)
+        #define ARD_SAMD_ZERO
+
+    #elif defined(SAMD_MKR1000)
+        #define ARD_SAMD_MKR1000
+
+    #elif defined(SAMD_MKRZERO)
+        #define ARD_SAMD_MKRZERO
+
+    #elif defined(SAMD_MKRWIFI1010)
+        #define ARD_SAMD_MKRWIFI1010
+
+    #elif defined(SAMD_NANO_33_IOT)
+        #define ARD_SAMD_NANO_33_IOT
+
+    #elif defined(SAMD_MKRFox1200)
+        #define ARD_SAMD_MKRFox1200
+
+    #elif defined(SAMD_MKRWAN1300) || defined(SAMD_MKRWAN1310)
+        #define ARD_SAMD_MKRWAN
+
+    #elif defined(SAMD_MKRGSM1400)
+        #define ARD_SAMD_NANO_33_IOT
+
+    #elif defined(SAMD_MKRNB1500)
+        #define ARD_SAMD_MKRNB1500
+
+    #elif defined(SAMD_MKRVIDOR4000)
+        #define ARD_SAMD_MKRVIDOR4000
+
+    #elif defined(SAMD_CIRCUITPLAYGROUND_EXPRESS)
+        #define ARD_SAMD_CIRCUITPLAYGROUND_EXPRESS
+
+    #elif defined(SAMD_TIAN)
+        #define ARD_SAMD_TIAN
+
+    #elif defined(SAM_ZERO)
+        #define ARD_SAMD_M0
+    #endif
+
+#elif defined(__SAM3X8E__)
+    #define ARD_SAM_DUE
+
 #elif defined(ARDUINO_ARCH_RENESAS)
     #if defined(ARDUINO_PORTENTA_C33)
-        #define ARD_ARCH_RENESAS_PORTENTA_C33
+        #define ARD_RENESAS_PORTENTA_C33
 
     #elif defined(ARDUINO_MINIMA)
-        #define ARD_ARCH_RENESAS_MINIMA
+        #define ARD_RENESAS_MINIMA
     
     #elif defined(ARDUINO_UNOWIFIR4)
-        #define ARD_ARCH_RENESAS_UNOWIFIR4
+        #define ARD_RENESAS_UNOWIFIR4
     
     #elif defined(ARDUINO_nanor4)
-        #define ARD_ARCH_RENESAS_nanor4
+        #define ARD_RENESAS_nanor4
     
     #elif defined(ARDUINO_OPTA_DIGITAL)
-        #define ARD_ARCH_RENESAS_OPTA_DIGITAL
+        #define ARD_RENESAS_OPTA_DIGITAL
     
     #elif defined(ARDUINO_OPTA_ANALOG)
-        #define ARD_ARCH_RENESAS_OPTA_ANALOG
+        #define ARD_RENESAS_OPTA_ANALOG
     
     #elif defined(ARDUINO_MUXTO)
-        #define ARD_ARCH_RENESAS_OPTA_MUXTO
+        #define ARD_RENESAS_OPTA_MUXTO
     #endif // end ARCH_RENESAS
 
 #endif // MCU if
