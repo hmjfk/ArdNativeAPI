@@ -185,6 +185,7 @@ For readability, indicate that the <architecture> name is changed.
     #endif // end __XTENSA__
 
 #elif defined(__arm__)
+    // Arduino SAMD
     #if defined (SAMD_ZERO)
         #define ARD_arm_SAMD_ZERO
 
@@ -224,9 +225,11 @@ For readability, indicate that the <architecture> name is changed.
     #elif defined(SAM_ZERO)
         #define ARD_arm_SAMD_M0
 
+    // Arduino SAM
     #elif defined(__SAM3X8E__)
         #define ARD_arm_SAM_DUE
 
+    // Arduino Renesas
     #if defined(ARDUINO_PORTENTA_C33)
         #define ARD_arm_PORTENTA_C33
 
