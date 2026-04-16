@@ -155,7 +155,7 @@ For readability, indicate that the <architecture> name is changed.
     #elif defined(ESP8266_THING) || defined(ESP8266_THING_DEV)
         #define ARD_XTENSA_ESP8266_THING
     
-    #elif defined(ESP8266_WEMOS_D1MINI) || defined(ESP8266_WEMOS_D1MINIPRO) \
+    #elif defined(ESP8266_WEMOS_D1MINI) || defined(ESP8266_WEMOS_D1MINIPRO) || \
           defined(ESP8266_WEMOS_D1MINILITE)
         #define ARD_XTENSA_ESP8266_WEMOS_D1MINI
     
@@ -168,7 +168,7 @@ For readability, indicate that the <architecture> name is changed.
     #elif defined(ESP8266_ARDUINO_STAR_OTTO) || defined(ESP8266_ARDUINO_UNOWIFI)
         #define ARD_XTENSA_ESP8266_STAR_OTTO
     
-    #elif define(ESP8266_ARDUINO_PRIMO)
+    #elif defined(ESP8266_ARDUINO_PRIMO)
         #define ARD_XTENSA_ESP8266_PRIMO
     
     #elif defined(ESP8266_OAK)
