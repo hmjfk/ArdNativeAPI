@@ -232,7 +232,7 @@ For readability, indicate that the <architecture> name is changed.
         #define ARD_arm_SAM_DUE
 
     // Arduino Renesas
-    #if defined(ARDUINO_PORTENTA_C33)
+    #elif defined(ARDUINO_PORTENTA_C33)
         #define ARD_arm_PORTENTA_C33
 
     #elif defined(ARDUINO_MINIMA)
