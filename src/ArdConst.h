@@ -37,8 +37,8 @@
 #if !defined(ARDCONST_H)
 #define ARDCONST_H
 
+#include <stdint.h>
 #include "ArdBorads.h"
-
 
 #warning "The Arduino macro math constant has been deleted. Instead, please use <numbers>."
 
@@ -119,7 +119,7 @@ enum
 #elif defined(ARD_AVR_ETHERNET)
 constexpr uint8_t LED_BUILTIN = 9;
 
-#elif defined(ARD_AVR_GEMMA) || defined(ARD_ESP8266_GENERIC)
+#elif defined(ARD_AVR_GEMMA) || defined(ARD_XTENSA_ESP8266_GENERIC)
 constexpr uint8_t LED_BUILTIN = 1;
 
 #elif 0
