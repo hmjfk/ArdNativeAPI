@@ -113,9 +113,11 @@ enum
   BIN = 2
 };
 
+#if defined(LED_BUILTIN)
 #undef LED_BUILTIN
-#if defined (ARD_AVR_ROBOT_MOTOR) || defined(ARD_AVR_ROBOT_CONTROL)
+
 // LED_BULIDIN is not defined
+#if defined(ARD_AVR_ROBOT_MOTOR) || defined(ARD_AVR_ROBOT_CONTROL)
 #elif defined(ARD_AVR_ETHERNET)
 constexpr uint8_t LED_BUILTIN = 9;
 
@@ -137,10 +139,10 @@ constexpr uint8_t LED_BUILTIN = 2;
 #elif defined(ARD_arm_OPTA_MUXTO)
 constexpr uint8_t LED_BUILTIN = 4;
 
-#elif defined (ARD_arm_nanor4)
+#elif defined(ARD_arm_nanor4)
 constexpr uint8_t LED_BUILTIN = 22;
 
-#elif defined (ARD_arm_PORTENTA_C33)
+#elif defined(ARD_arm_PORTENTA_C33)
 constexpr uint8_t LED_BUILTIN = 35;
 
 #elif 0
@@ -152,11 +154,13 @@ constexpr uint8_t LED_BUILTIN = 16;
 #elif 0
 constexpr uint8_t LED_BUILTIN = 14;
 
-#elif defined(ARD_ZEPHYR_ARDUINO_NANO_MATTER) || defined (ARD_AVR_UNO_WIFI_REV2)
+#elif defined(ARD_ZEPHYR_ARDUINO_NANO_MATTER) || defined(ARD_AVR_UNO_WIFI_REV2)
 constexpr uint8_t LED_BUILTIN = 25;
 
 #else // standard
 constexpr uint8_t LED_BUILTIN = 13;
 
+#endif // end Borad if
 #endif // end LED_BULIDIN defined
+
 #endif // end ARDCONST_H

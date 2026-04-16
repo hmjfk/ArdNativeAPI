@@ -253,5 +253,5 @@ For readability, indicate that the <architecture> name is changed.
     #elif defined(ARDUINO_MUXTO)
         #define ARD_arm_OPTA_MUXTO
     #endif // end __arm__
-#endif // MCU if
+#endif // end Borad if
 #endif // end ARDBORADS_H

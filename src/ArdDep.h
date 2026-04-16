@@ -38,6 +38,7 @@
 */
 #if !defined(ARDDEP_H)
 #define ARDDEP_H
+#include<stdint.h>
 
 // ここで定義解除しないと後のtypedefが書き換わってしまう。
 #if defined(word)
@@ -53,7 +54,12 @@
 [[deprecated("Avoid using Arduino`s unique boolean type. Use the built-in bool type instead.")]]
 typedef bool                    boolean;
 [[deprecated]] typedef uint8_t  byte;
+
+#if defined(ARDUINO_ARCH_ESP32)
+[[deprecated]] typedef unsigned int word;
+#else
 [[deprecated]] typedef uint16_t word;
+#endif
 
 #if __has_include(<WCharacter.h>)
 [[deprecated("Instead, please use the <ctype.h> function.")]]
