@@ -67,9 +67,8 @@ inline int8_t digitalPinToInterrupt(uint8_t p)
         default:
             return NOT_AN_INTERRUPT;
     }
-
 // ARD_AVR_STANDARD, (other)
-#elif defined(__AVR__)
+#elif defined(ARDUINO_ARCH_AVR)
 
     switch(p)
     {
@@ -90,10 +89,12 @@ inline int8_t digitalPinToInterrupt(uint8_t p)
 
             return NOT_AN_INTERRUPT;
     }
+
+#else
+        return p;
 #endif // end boards if
 }
 #endif // end digitalPinToInterrupt defined
-
 
 #if defined(__cplusplus)
 }
