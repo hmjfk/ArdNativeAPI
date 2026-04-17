@@ -123,10 +123,15 @@ For readability, indicate that the <architecture> name is changed.
     #endif // end __AVR__
 
 #elif defined (__XTENSA__)
+    // Arduino ESP
+    #if defined (ESP32S3_DEV)
+        #define ARD_XTENSA_ESP32S3_DEV
+    
     // ESP8266
-    #if defined(ESP8266_GENERIC) || defined(ESP8266_ESP01) || \
+    #elif defined(ESP8266_GENERIC) || defined(ESP8266_ESP01) || \
         defined(ESP8266_ESP210) || defined(GEN4_IOD)
         #define ARD_XTENSA_ESP8266_GENERIC
+    
     
     #elif defined(ESP8266_ESP13)
         #define ARD_XTENSA_ESP8266_ESP13
@@ -179,10 +184,6 @@ For readability, indicate that the <architecture> name is changed.
 
     #elif defined(AMPERKA_WIFI_SLOT)
         #define ARD_XTENSA_AMPERKA_WIFI_SLOT
-
-    // Arduino ESP
-    #elif defined (ESP32S3_DEV)
-        #define ARD_XTENSA_ESP32S3_DEV
 
     #endif // end __XTENSA__
 
