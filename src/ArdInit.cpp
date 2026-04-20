@@ -36,7 +36,7 @@
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-
+#define ARDUINO_MAIN
 #include<Arduino.h>
 #include"Ardinit.hpp"
 
@@ -70,7 +70,7 @@ void initCore()
 
     initVariant();
     #if defined(ARDUINO_ARCH_SAMD)
-    daley(1);
+    delay(1);
 #endif
 #if defined(USBCON)
     #if defined(ARDUINO_ARCH_SAMD)
