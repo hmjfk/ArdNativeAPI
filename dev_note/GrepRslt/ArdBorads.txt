@@ -300,8 +300,8 @@ esp8266/boards.txt:gen4iod.build.board=GEN4_IOD
 esp8266/boards.txt:oak.build.board=ESP8266_OAK
 esp8266/boards.txt:wifiduino.build.board=WIFIDUINO_ESP8266
 esp8266/boards.txt:wifi_slot.build.board=AMPERKA_WIFI_SLOT
-# .build.variant:
 
+# .build.variant:
 Arduino-ESP32/boards.txt:esp32s3.build.variant=esp32s3
 Arduino-ESP32/boards.txt:esp32c3.build.variant=esp32c3
 Arduino-ESP32/boards.txt:esp32s2.build.variant=esp32s2
