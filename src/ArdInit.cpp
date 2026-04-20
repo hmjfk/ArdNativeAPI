@@ -36,13 +36,15 @@
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-#define ARDUINO_MAIN
 #include<Arduino.h>
 #include"Ardinit.hpp"
 
 using namespace arduino;
 
 extern "C" {
+
+// for ArduinoCore-samd
+void __libc_init_array(void);
 
 #if defined (__ZEPHYR__)
 void __loopHook();
