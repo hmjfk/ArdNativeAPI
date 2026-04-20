@@ -130,8 +130,8 @@ constexpr uint8_t LED_BUILTIN = 32;
 #elif 0
 constexpr uint8_t LED_BUILTIN = 42;
 
-#elif defined(ARD_arm_SAMD_MKR1000) || defined(ARD_arm_SAMD_MKRGSM1200) \
-      defined(ARD_arm_SAMD_MKRFox1400) || defined(ARD_arm_SAMD_MKRNB1500) \
+#elif defined(ARD_arm_SAMD_MKR1000) || defined(ARD_arm_SAMD_MKRGSM1200) || \
+      defined(ARD_arm_SAMD_MKRFox1400) || defined(ARD_arm_SAMD_MKRNB1500)  || \
       defined(ARD_arm_SAMD_MKRWIFI1010)
 constexpr uint8_t LED_BUILTIN = 6;
 
