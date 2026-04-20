@@ -5,7 +5,7 @@
 ここでは、Arduino の Borad 環境を構築した段階で利用可能な部品集について説明する。
 Arduino では、これらを CoreAPI と呼んでいる。
 
-### header <Arduino.h>
+### <Arduino.h>
 
 ### Pin I/O Library
 
