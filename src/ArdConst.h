@@ -113,10 +113,10 @@ enum
   BIN = 2
 };
 
+// LED_BUILTIN
 #if defined(LED_BUILTIN)
 #undef LED_BUILTIN
 
-// LED_BULIDIN is not defined
 #if defined(ARD_AVR_ROBOT_MOTOR) || defined(ARD_AVR_ROBOT_CONTROL)
 #elif defined(ARD_AVR_ETHERNET)
 constexpr uint8_t LED_BUILTIN = 9;
@@ -124,13 +124,15 @@ constexpr uint8_t LED_BUILTIN = 9;
 #elif defined(ARD_AVR_GEMMA) || defined(ARD_XTENSA_ESP8266_GENERIC)
 constexpr uint8_t LED_BUILTIN = 1;
 
-#elif 0
+#elif defined(ARD_arm_SAMD_MKRZERO)
 constexpr uint8_t LED_BUILTIN = 32;
 
 #elif 0
 constexpr uint8_t LED_BUILTIN = 42;
 
-#elif 0
+#elif defined(ARD_arm_SAMD_MKR1000) || defined(ARD_arm_SAMD_MKRGSM1200) \
+      defined(ARD_arm_SAMD_MKRFox1400) || defined(ARD_arm_SAMD_MKRNB1500) \
+      defined(ARD_arm_SAMD_MKRWIFI1010)
 constexpr uint8_t LED_BUILTIN = 6;
 
 #elif 0

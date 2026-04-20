@@ -40,35 +40,46 @@
 #include<Arduino.h>
 #include"Ardinit.hpp"
 
+using namespace arduino;
+
 extern "C" {
 
 #if defined (__ZEPHYR__)
 void __loopHook();
-  #include "zephyr/kernel.h"
-  #ifdef CONFIG_LLEXT
-  #include <zephyr/llext/symbol.h>
-  #endif
+    #include "zephyr/kernel.h"
+    #ifdef CONFIG_LLEXT
+        #include <zephyr/llext/symbol.h>
+    #endif
 #endif
 
 
 void initCore()
 {
-#if defined(__AVR_LIBC_VERSION__)
-  init();
-#elif defined (__ZEPHYR__)
-#if(DT_NODE_HAS_PROP(DT_PATH(zephyr_user), cdc_acm) &&                                            \
-	 (CONFIG_USB_CDC_ACM || CONFIG_USBD_CDC_ACM_CLASS))
+#if defined (__ZEPHYR__)
+    #if(DT_NODE_HAS_PROP(DT_PATH(zephyr_user), cdc_acm) &&                                            \
+	(CONFIG_USB_CDC_ACM || CONFIG_USBD_CDC_ACM_CLASS))
   	Serial.begin(115200);
+    #endif
+#else
+  init();
 #endif
+
+#if defined(ARDUINO_ARCH_SAMD)
+    __libc_init_array();
 #endif // end runtime part
 
-  initVariant();
-
+    initVariant();
+    #if defined(ARDUINO_ARCH_SAMD)
+    daley(1);
+#endif
 #if defined(USBCON)
-  USBDevice.attach();
+    #if defined(ARDUINO_ARCH_SAMD)
+    USBDevice.init();
+    #endif
+    USBDevice.attach();
 #endif
 
-#if defined (__ZEPHYR__) && defined (CONFIG_MULTITHREADING)
+#if defined(__ZEPHYR__) && defined (CONFIG_MULTITHREADING)
 	start_static_threads();
 #endif
 }
@@ -76,8 +87,9 @@ void initCore()
 void serialUpdate()
 {
 #if defined(__ZEPHYR__)
-  __loopHook();
+    __loopHook();
 #else
+
   if (serialEventRun)
 	  	serialEventRun();
 #endif
