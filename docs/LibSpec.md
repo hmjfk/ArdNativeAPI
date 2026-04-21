@@ -108,7 +108,6 @@ A/D 変換の基準電圧源を設定する。
 |                 | AR_INTERNAL      | MCU内部の基準電圧(0.6V)                                                                                         |
 |                 | AR_INTERNAL1V2   | 内部基準電圧(1.2V) AR_INTERNAL の2倍                                                                            |
 |                 | AR_INTERNAL2V4   | 内部基準電圧(2.4V) AR_INTERNAL の4倍                                                                            |
-|                 |
 #### 戻り値
 
 なし
