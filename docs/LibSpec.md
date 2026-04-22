@@ -21,7 +21,7 @@ void pinMode(pin_size_t pinNumber, PinMode pinMode);
 
 #### 引数
 
-- pinNumber: 対象の pin
+- pinNumber: 対象の端子番号
 - pinMode:端子の機能を指定する。pinMode 型の定数で指定することもできる。
 
 ---
