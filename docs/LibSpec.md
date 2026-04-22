@@ -392,7 +392,7 @@ inline int8_t digitalPinToInterrupt(uint8_t p);
 #### 引数
 - p : 端子番号
 #### 戻り値
-その端子が割り込みに対応していれば対応する割り込み番号を返し、そうでなければ編纂時定数 NOT_AN_INTERRUPTを返す。
+その端子が割り込みに対応していれば割り込み番号を返し、そうでなければ編纂時定数 NOT_AN_INTERRUPTを返す。
 ### <ArdString.hpp>
 ### <RingBuffer.hpp>
 ## 著作権について
