@@ -115,7 +115,7 @@ void analogRead(pin_size_t pinNumber, int value);
 
 #### 機能
 
-analogReference 関数及びの設定に基づいてA/D変換を行い値を読み込む。基準電圧の設定がない場合は既定の設定が適用される。
+analogReference 関数の設定に基づいてA/D変換を行い値を読み込む。基準電圧の設定がない場合は既定の設定が適用される。
 
 基準電圧として AREF 端子を使用する際、analogReference 関数で AREF 端子の使用を設定せずにこの関数を呼び出したときは、未定義の動作となる。詳しくは、analogReference 関数の警告節を参照のこと。また、この関数が利用可能な端子は実装定義である。
 
