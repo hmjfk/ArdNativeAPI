@@ -121,7 +121,9 @@ For readability, indicate that the <architecture> name is changed.
     #else
         #define ARD_AVR_STANDARD
     #endif // end __AVR__
-
+#elif defined (__riscv)
+    // Arduino ESP
+    
 #elif defined (__XTENSA__)
     // Arduino ESP
     #if defined (ESP32S3_DEV)
