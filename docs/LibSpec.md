@@ -370,12 +370,18 @@ void interrupts();
 ~~~
 #### 機能
 割り込みを許可する。
+
+---
+
 #### **noInterrupts function**
 ~~~C
 void noInterrupts();
 ~~~
 #### 機能
 割り込みを禁止する。
+
+---
+
 #### **digitalPinToInterrupt function**
 ~~~C
 inline int8_t digitalPinToInterrupt(uint8_t p);
