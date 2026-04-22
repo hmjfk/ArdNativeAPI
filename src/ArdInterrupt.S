@@ -21,6 +21,8 @@
 #include "Interrupts/avr.inc"
 #elif defined(__Z80__)
 #include "Interrupts/z80.inc"
+#elif defined(__riscv)
+#include "Interrupts/riscv.inc"
 #elif defined(__arm__)
 #include "Interrupts/arm.inc"
 #elif defined(__XTENSA__)
