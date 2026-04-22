@@ -134,7 +134,7 @@ pinNumber から読み取った pin の値。
 void analogWrite(pin_size_t pinNumber, int value);
 ```
 #### 機能
-PWM信号を出力する。
+指定した衝撃係数valueによりPWM信号を出力する。同じ端子に対してanalogWrite関数もしくは、digitalRead関数、digitalWrite関数を呼び出すまで、その信号は出力され続ける。PWMに使用する周波数および利用可能な端子は実装定義である。
 #### 引数
 
 - pinNumber: 対象の端子番号
