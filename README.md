@@ -53,7 +53,7 @@ Windows: `%APPDATA%\..\local\Arduino15\packages\`
 MacOS: `~/Library/arduino15/packages/arduino/hardware`  
 GNU/Linux: `~/.arduino15/packages/arduino/hardware`  
 ## 仕組み
-Arduinoでは、`Arduino.h`を明示的に取り込むと、Arduinoが本来行っている翻訳前の事前処理が無効になるという性質がある。これは、AVR boardにて有効化されているLTOの効果によるものであると考えられる。本部品集はこの性質に着目して、`Arduino.h`を部品集内で明示的に取り込んだ上で、利用者がmain関数を定義することによって、事前定義されているmain関数を無効化しているのである。AVR以外のboardではLTOが機能しないため、[使用方法](##使用方法)4.の場所にあるArduino-CoreAPIの`main.cpp`を削除する必要がある。
+Arduinoでは、`Arduino.h`を明示的に取り込むと、Arduinoが本来行っている翻訳前の事前処理が無効になるという性質がある。これは、\[\[gnu::weak\]\]属性の効果によるものであると考えられる。本部品集はこの性質に着目して、`Arduino.h`を部品集内で明示的に取り込んだ上で、利用者がmain関数を定義することによって、事前定義されているmain関数を無効化しているのである。一部のboardではこれが機能しないため、[使用方法](##使用方法)4.の場所にあるArduino-CoreAPIの`main.cpp`を削除する必要がある。
 当然、`void setup()`及び`void loop()`の呼出もmain関数に含まれているので、無効にできるのだ。
 
 ## 利用許諾
