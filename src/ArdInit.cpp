@@ -39,8 +39,6 @@
 #include<Arduino.h>
 #include"Ardinit.hpp"
 
-using namespace arduino;
-
 extern "C" {
 
 // for ArduinoCore-samd
