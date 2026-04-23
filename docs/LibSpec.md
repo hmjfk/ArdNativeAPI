@@ -1,9 +1,8 @@
 # Library Specification
 
 ## ArduinoCoreAPI
-
-ここでは、Arduino の Borad 環境を構築した段階で利用可能な部品集について説明する。
-Arduino では、これらを CoreAPI と呼んでいる。
+ここでは、Arduinoの機種環境を導入した段階で利用可能な部品集について説明する。
+Arduino では、これらをCoreAPIと呼んでいる。
 
 ### <Arduino.h>
 
@@ -385,6 +384,7 @@ void noInterrupts();
 
 #### **digitalPinToInterrupt function**
 ~~~C
+constexpr int8_t NOT_AN_INTERRUPT = -1;
 inline int8_t digitalPinToInterrupt(uint8_t p);
 ~~~
 #### 機能

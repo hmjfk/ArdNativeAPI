@@ -55,6 +55,13 @@ void attachInterrupt(pin_size_t interruptNumber, voidFuncPtr callback, PinStatus
 void attachInterruptParam(pin_size_t interruptNumber, voidFuncPtrParam callback, PinStatus mode, void* param);
 void detachInterrupt(pin_size_t interruptNumber);
 
+// The original Arduino.h defines it here, but in ArdNativeAPI it is in the “ArdInterrupt.h”.
+/*
+void interrupts();
+void noInterrupts();
+int8_t digitalPinToInterrupt(uint8_t p);
+*/
+
 // other utility
 void yield();
 
@@ -67,15 +74,6 @@ long map(long, long, long, long, long);
 long random(long);
 long random(long, long);
 void randomSeed(unsigned long);
-
-// interrupts
-// The original Arduino.h defines it here, but in ArdNativeAPI it is in the “ArdInterrupt.h”.
-/*
-void interrupts();
-void noInterrupts();
-int8_t digitalPinToInterrupt(uint8_t p)
-
-*/
 ```
 
 ### <pins_arduino.h>
@@ -1593,7 +1591,6 @@ public:
 };
 ~~~
 ## ArdNativeAPI
-
 ### <ArdNative.hpp>
 
 ```C++
@@ -1660,18 +1657,8 @@ void serialUpdate();
 ```C
 void interrupts();
 void noInterrupts();
+constexpr int8_t NOT_AN_INTERRUPT = -1;
 uint8_t digitalPinToInterrupt(uint8_t i);
-```
-
-### <ArdString.hpp>
-
-```C++
-#include <ArdString.hpp>
-
-  class __FlashStringHelper;
-
-  template<const char T[]>
-  const __FlashStringHelper* F(T string_literal);
 ```
 
 ### <ArdMath.hpp>
