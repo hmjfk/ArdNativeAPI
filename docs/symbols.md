@@ -51,8 +51,8 @@ void tone(uint8_t _pin, unsigned int frequency, unsigned long duration = 0);
 void noTone(uint8_t _pin);
 
 // interrupt
+typedef void(*voidFuncPtr)();
 void attachInterrupt(pin_size_t interruptNumber, voidFuncPtr callback, PinStatus mode);
-void attachInterruptParam(pin_size_t interruptNumber, voidFuncPtrParam callback, PinStatus mode, void* param);
 void detachInterrupt(pin_size_t interruptNumber);
 
 // The original Arduino.h defines it here, but in ArdNativeAPI it is in the “ArdInterrupt.h”.
@@ -1394,11 +1394,11 @@ class TwoWire : /* unspecified */
     void end();
     void setClock(uint32_t);
     void setWireTimeout(uint32_t timeout = 25000, bool reset_with_timeout = false);
-    bool getWireTimeoutFlag(void);
-    void clearWireTimeoutFlag(void);
+    bool getWireTimeoutFlag();
+    void clearWireTimeoutFlag();
     void beginTransmission(uint8_t);
     void beginTransmission(int);
-    uint8_t endTransmission(void);
+    uint8_t endTransmission();
     uint8_t endTransmission(uint8_t);
     uint8_t requestFrom(uint8_t, uint8_t);
     uint8_t requestFrom(uint8_t, uint8_t, uint8_t);
@@ -1407,12 +1407,12 @@ class TwoWire : /* unspecified */
     uint8_t requestFrom(int, int, int);
     virtual size_t write(uint8_t);
     virtual size_t write(const uint8_t* , size_t);
-    virtual int available(void);
-    virtual int read(void);
-    virtual int peek(void);
-    virtual void flush(void);
+    virtual int available();
+    virtual int read();
+    virtual int peek();
+    virtual void flush();
     void onReceive(void (*)(int));
-    void onRequest(void (*)(void));
+    void onRequest(void (*)());
 
     inline size_t write(unsigned long n);
     inline size_t write(long n);
@@ -1460,7 +1460,7 @@ public:
     void setDNS(IPAddress dns_server1);
     void setDNS(IPAddress dns_server1, IPAddress dns_server2);
 
-    int disconnect(void);
+    int disconnect();
 
     uint8_t* macAddress(uint8_t* mac);
 

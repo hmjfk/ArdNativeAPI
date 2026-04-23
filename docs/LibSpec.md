@@ -21,7 +21,7 @@ void pinMode(pin_size_t pinNumber, PinMode pinMode);
 #### 引数
 
 - pinNumber: 対象の端子番号
-- pinMode:端子の機能を指定する。pinMode 型の定数で指定することもできる。
+- pinMode: 端子の機能を指定する。pinMode 型の定数で指定することもできる。
 
 ---
 
@@ -33,8 +33,7 @@ PinStatus digitalRead(pin_size_t pinNumber);
 ```
 
 #### 機能
-
-digital として読み書きする。
+二進値を読み書きする。
 
 #### 引数
 
@@ -140,39 +139,38 @@ void analogWrite(pin_size_t pinNumber, int value);
 - value: 衝撃係数
 
 ---
-
-#### **indfender name**
+### Interrupt Library
+#### **attachInterrupt function**
 
 ```C++
-
+typedef void(*voidFuncPtr)();
+void attachInterrupt(pin_size_t interruptNumber, voidFuncPtr callback, PinStatus mode);
 ```
 
 #### 機能
-
+割り込み時に呼び出される関数(ISR)を登録する。
 #### 引数
 
-- arg0 :
-- arg1 :
-
-#### 戻り値
-
+- interruptNumber: 割り込み番号。通常は、digitalPinToInterrupt関数を使って割り込み番号を取得する。
+- callback: ISRへの指示
+- mode: 割り込みの種類
+  - LOW - 
+  - HIGH - 
+  - CHANGE - 入力変化割り込み
+  - FALLING - 入力立ち上がり割り込み
+  - RISING - 入力立ち下がり割り込み
 ---
 
-#### **indfender name**
+#### **detachInterrupt function**
 
 ```C++
-
+void detachInterrupt(pin_size_t interruptNumber);
 ```
 
 #### 機能
 
 #### 引数
-
-- arg0 :
-- arg1 :
-
-#### 戻り値
-
+- interruptNumber: 割り込み番号
 
 ---
 
@@ -425,7 +423,7 @@ inline int8_t digitalPinToInterrupt(uint8_t p);
 
 #### 引数
 
-- arg0 :
-- arg1 :
+- arg0:
+- arg1:
 
 #### 戻り値
