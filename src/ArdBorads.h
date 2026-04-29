@@ -29,6 +29,10 @@ boards.txt:
     *.build.variant=<pins_dir>
     *.build.board=<name>
 
+Additional flags for ESP32
+    *.build.tarch=<ISA>
+    *.build.target=<BoardSeries>
+
 repository tree:
     /variants/<pins_dir>
 

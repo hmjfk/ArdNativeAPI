@@ -116,8 +116,9 @@ enum
 // LED_BUILTIN
 #if defined(LED_BUILTIN)
 #undef LED_BUILTIN
-
-#if defined(ARD_AVR_ROBOT_MOTOR) || defined(ARD_AVR_ROBOT_CONTROL)
+#if defined(ESP32) && !defined()
+// already defined
+#elif defined(ARD_AVR_ROBOT_MOTOR) || defined(ARD_AVR_ROBOT_CONTROL)
 #elif defined(ARD_AVR_ETHERNET)
 constexpr uint8_t LED_BUILTIN = 9;
 
