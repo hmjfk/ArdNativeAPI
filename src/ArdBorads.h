@@ -19,8 +19,10 @@
 #if !defined(ARDBORADS_H)
 #define ARDBORADS_H
 
-
-// Arduino boards type macro
+/*
+Arduino boards type macro
+This header is intended to identify "variants".
+*/
 
 /*
 Board name macro is boards.txt and platform.txt defined.
@@ -127,21 +129,68 @@ For readability, indicate that the <architecture> name is changed.
     #endif // end __AVR__
 #elif defined (__riscv)
     // Arduino ESP
-    
+    #if defined (ARDUINO_ESP32C3_DEV)
+        #define ARD_riscv_ESP32C3_DEV
+    #endif
+
 #elif defined (__XTENSA__)
     // Arduino ESP
-    #if defined (ESP32S3_DEV)
+    #if defined(ARDUINO_ESP32S3_DEV)
         #define ARD_XTENSA_ESP32S3_DEV
+    
+    #elif defined(ARDUINO_ESP32S2_DEV)
+        #define ARD_XTENSA_ESP32S2_DEV
+    
+    #elif defined(ARDUINO_ESP32_DEV)
+        #define ARD_XTENSA_ESP32_DEV
+    
+    #elif defined(ARDUINO_ADAFRUIT_FEATHER_ESP32S2)
+        #define ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S2
+    
+    #elif defined(ARDUINO_ADAFRUIT_FEATHER_ESP32S2_TFT)
+        #define ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S2_TFT
+    
+    #elif defined(ARDUINO_ADAFRUIT_FEATHER_ESP32S2_REVTFT)
+        #define ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S2_REVTFT
+
+    #elif defined(ARDUINO_METRO_ESP32S2)
+        #define ARD_XTENSA_METRO_ESP32S2
+    
+    #elif defined(ARDUINO_MAGTAG29_ESP32S2)
+        #define ARD_XTENSA_MAGTAG29_ESP32S2
+    
+    #elif defined(ARDUINO_ADAFRUIT_MATRIXPORTAL_ESP32S3)
+        #define ARD_XTENSA_ADAFRUIT_MATRIXPORTAL_ESP32S3
+    
+    #elif defined(ARDUINO_FUNHOUSE_ESP32S2)
+        #define ARD_XTENSA_FUNHOUSE_ESP32S2
+    
+    #elif defined(ARDUINO_FUNHOUSE_ESP32S3)
+        #define ARD_XTENSA_FUNHOUSE_ESP32S3
+    
+    #elif defined(ARDUINO_ADAFRUIT_FEATHER_ESP32S3_NOPSRAM)
+        #define ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S3_NOPSRAM
+    
+    #elif defined(ARDUINO_ADAFRUIT_FEATHER_ESP32S3_TFT)
+        #define ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S3_TFT
+    
+    #elif defined(ARDUINO_ADAFRUIT_FEATHER_ESP32S3_REVTFT)
+        #define ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S3_REVTFT
+
+    #elif defined(ARDUINO_unphone8)
+        #define ARD_XTENSA_unphone8
+    
+    #elif defined(ARDUINO_unphone9)
+        #define ARD_XTENSA_unphone9
     
     // ESP8266
     #elif defined(ESP8266_GENERIC) || defined(ESP8266_ESP01) || \
         defined(ESP8266_ESP210) || defined(GEN4_IOD)
         #define ARD_XTENSA_ESP8266_GENERIC
     
-    
     #elif defined(ESP8266_ESP13)
         #define ARD_XTENSA_ESP8266_ESP13
-    
+
     #elif defined(ESP8266_ESP12)
         #define ARD_XTENSA_ESP8266_ESP12
 

@@ -116,8 +116,22 @@ enum
 // LED_BUILTIN
 #if defined(LED_BUILTIN)
 #undef LED_BUILTIN
-#if defined(ESP32) && !defined()
+#if defined(ESP32) && !(defined(ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S2) || \
+                        defined(ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S2_TFT) || \
+                        defined(ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S2_REVTFT) || \
+                        defined(ARD_XTENSA_METRO_ESP32S2) || \
+                        defined(ARD_XTENSA_MAGTAG29_ESP32S2) || \
+                        defined(ARD_XTENSA_ADAFRUIT_MATRIXPORTAL_ESP32S3) || \
+                        defined(ARD_XTENSA_FUNHOUSE_ESP32S2) || \
+                        defined(ARD_XTENSA_FUNHOUSE_ESP32S3) || \
+                        defined(ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S3_NOPSRAM) || \
+                        defined(ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S3_TFT) || \
+                        defined(ARD_XTENSA_ADAFRUIT_FEATHER_ESP32S3_REVTFT) || \
+                        defined(ARD_XTENSA_unphone8) || \
+                        defined(ARD_XTENSA_unphone9)) \
+
 // already defined
+
 #elif defined(ARD_AVR_ROBOT_MOTOR) || defined(ARD_AVR_ROBOT_CONTROL)
 #elif defined(ARD_AVR_ETHERNET)
 constexpr uint8_t LED_BUILTIN = 9;
@@ -128,7 +142,7 @@ constexpr uint8_t LED_BUILTIN = 1;
 #elif defined(ARD_arm_SAMD_MKRZERO)
 constexpr uint8_t LED_BUILTIN = 32;
 
-#elif 0
+#elif defined(ARD_XTENSA_METRO_ESP32S2)
 constexpr uint8_t LED_BUILTIN = 42;
 
 #elif defined(ARD_arm_SAMD_MKR1000) || defined(ARD_arm_SAMD_MKRGSM1200) || \
@@ -148,8 +162,8 @@ constexpr uint8_t LED_BUILTIN = 22;
 #elif defined(ARD_arm_PORTENTA_C33)
 constexpr uint8_t LED_BUILTIN = 35;
 
-#elif 0
-constexpr uint8_t LED_BUILTIN = 5;
+#elif defined(ARD_XTENSA_FUNHOUSE_ESP32S2)
+constexpr uint8_t LED_BUILTIN = 37;
 
 #elif defined(ARD_XTENSA_ESP8266_ESP13)
 constexpr uint8_t LED_BUILTIN = 16;
