@@ -1853,30 +1853,3 @@ namespace ArdNative
 }
 #endif
 ```
-### <RingBuffer.hpp>
-
-```C++
-template <int N>
-class RingBuffer
-{
-  public:
-    uint8_t aucBuffer[N];
-    volatile int iHead;
-    volatile int iTail;
-    volatile int numElems;
-
-  public:
-    RingBuffer();
-    void store_char(uint8_t c);
-    void clear();
-    int read_char();
-    int available();
-    int availableForStore();
-    int peek();
-    bool isFull();
-
-  private:
-    int nextIndex(int index);
-    inline bool isEmpty() const { return (numElems == 0); }
-};
-```
