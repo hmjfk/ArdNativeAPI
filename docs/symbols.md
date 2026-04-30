@@ -1860,10 +1860,10 @@ template <int N>
 class RingBuffer
 {
   public:
-    uint8_t _aucBuffer[N];
-    volatile int _iHead;
-    volatile int _iTail;
-    volatile int _numElems;
+    uint8_t aucBuffer[N];
+    volatile int iHead;
+    volatile int iTail;
+    volatile int numElems;
 
   public:
     RingBuffer();
@@ -1877,6 +1877,6 @@ class RingBuffer
 
   private:
     int nextIndex(int index);
-    inline bool isEmpty() const;
+    inline bool isEmpty() const { return (numElems == 0); }
 };
 ```
