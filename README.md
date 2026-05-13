@@ -31,24 +31,19 @@ tree内のdocsを参照のこと。
 ArdNativeAPIを使って新たなSketchを書くのに便利な雛形が用意されている。
 init_templateを参照のこと。
 ## 使用方法
-1. Gitから複製する。
+前提条件：環境がPOSIXに対応していること。Windowsの場合はGit Bash環境であること。
+
+1. Arduino用部品集が格納されている場所へ移動する。
+~~~
+cd ~/Arduino/libraries/
+~~~
+
+2. Gitから複製する。
 ~~~
 git clone https://github.com/hmjfk/ArdNativeAPI.git
 ~~~
 
-2. ArdNativeAPIという名称でzip形式に圧縮する。
-3. Arduino IDEを開き、sketch menuから、
-~~~
-            ︙
------------------------------
-スケッチフォルダを表示      Alt + ctrl + K
-ライブラリをインクルード                 ⏵ ライブラリを管理...       ctrl + shift + I
-                                            ---------------------------------------------
-                                            .ZIP形式のライブラリをインストール…         ←ここ
-~~~
-を選択して、先ほど保存した場所を選択する。  
-4. repoにある`platform.local.txt`の設定を追加する。場所はOSごとに次の通りである。 
-
+3. repoにある`platform.local.txt`の設定を追加する。場所はOSごとに次の通りである。 
 Windows: `%APPDATA%\..\local\Arduino15\packages\`  
 MacOS: `~/Library/arduino15/packages/arduino/hardware`  
 GNU/Linux: `~/.arduino15/packages/arduino/hardware`  

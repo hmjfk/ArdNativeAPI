@@ -1,5 +1,5 @@
 ## 概要
-Arduinoのプログラミング言語は一般にArduino言語と呼ばれているが、実際にはC++である。Arduino独自の構築言語である`platform.txt`を覗いてみると既定のC++規格は`gnu++11`となっている。必要に応じてC++17にすることもできる。
+Arduinoのプログラミング言語は一般にArduino言語と呼ばれているが、実際にはC++である。Arduino独自の構築言語である[platform](https://docs.arduino.cc/arduino-cli/platform-specification/)を覗いてみると既定のC++規格は機種依存となっている。必要に応じて変更にすることもできる。
 Arduinoによってmain関数が隠されているため本格的な開発ではいささか扱いにくいところがあるが、ArdNativeAPIを使うとこのような障壁はなくなるため、Arduinoを純粋な部品集として扱うことができるようになる。
 ArduinoCoreAPI説明書は「Arduino言語仕様」という変な形式をとっているため開発に慣れている人にとってはわかりにくい部分がある。
 そこで、ArdNativeではほとんどの部品集説明で見られるようにheader宣言をすべて収載し、その上でheader/symbolごとに機能・引数・効果・戻り値などを記載した。こちらのほうが、必要な情報をすばやく見つけられるため便利である。
