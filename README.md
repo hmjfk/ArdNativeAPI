@@ -5,8 +5,7 @@ ArduinoをAPIとして使えるようにする部品集
 > [!NOTE]
 > この部品集はArduino上級者向けであり、使用する際はC++最新規格に精通している必要がある。
 
-ArdNativeAPIは、通称Arduino言語と呼ばれている状態から切り離して完全なC++として開発できるように設計された部品集であり、Arduinoを純粋なAPIとして呼び出すことができる。現在のところ、対応している標準規格は、C++17である。  
-今後、Arduinoで使用されている処理系が更新され次第、随時最新のものに移行する予定である。
+ArdNativeAPIは、通称Arduino言語と呼ばれている状態から切り離して完全なC++として開発できるように設計された部品集であり、Arduinoを純粋なAPIとして呼び出すことができる。
 ArdNativeAPIを使った場合のhello worldは次のようになる。
 ~~~C++
 #include <ArdNative.hpp>
@@ -43,7 +42,7 @@ cd ~/Arduino/libraries/
 git clone https://github.com/hmjfk/ArdNativeAPI.git
 ~~~
 
-3. repoにある`platform.local.txt`の設定を追加する。場所はOSごとに次の通りである。 
+3. repoにある`platform.local.txt`の設定を追加する。既定の場所はOSごとに次の通りである。 
 Windows: `%APPDATA%\..\local\Arduino15\packages\`  
 MacOS: `~/Library/arduino15/packages/arduino/hardware`  
 GNU/Linux: `~/.arduino15/packages/arduino/hardware`  
