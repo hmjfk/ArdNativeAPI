@@ -4,3 +4,4 @@ compiler.c.extra_flags={compiler.warning_flags.all} -Wno-unused
 # ここにinclude pathを追加すれば、拡張子なしのheaderが読めるようになる。
 # -I{runtime.tools.avr-gcc.path}/
 compiler.cpp.extra_flags=-fno-permissive {compiler.warning_flags.all} -Wno-unused -Werror=narrowing -std=gnu++17 -fno-rtti -fno-exceptions
+recipe.hooks.core.postbuild.1.pattern=rm main.cpp.o
