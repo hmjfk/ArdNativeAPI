@@ -1,11 +1,11 @@
 # ArdNativeAPI
-ArduinoをAPIとして使えるようにする部品集
+Arduinoを純粋なC++部品集として使えるようにする部品集
 
 ## 概要
 > [!NOTE]
 > この部品集はArduino上級者向けであり、使用する際はC++最新規格に精通している必要がある。
 
-ArdNativeAPIは、通称Arduino言語と呼ばれている状態から切り離して完全なC++として開発できるように設計された部品集であり、Arduinoを純粋なAPIとして呼び出すことができる。
+ArdNativeAPIは、通称Arduino言語と呼ばれている状態から切り離して完全なC++として開発できるように設計された部品集であり、ArduinoCoreを純粋なAPIとして呼び出すことができる。
 ArdNativeAPIを使った場合のhello worldは次のようになる。
 ~~~C++
 #include <ArdNative.hpp>
