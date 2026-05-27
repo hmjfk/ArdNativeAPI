@@ -153,12 +153,17 @@ void attachInterrupt(pin_size_t interruptNumber, voidFuncPtr callback, PinStatus
 
 - interruptNumber: 割り込み番号。通常は、digitalPinToInterrupt関数を使って割り込み番号を取得する。
 - callback: ISRへの指示
-- mode: 割り込みの種類
-  - LOW - 
-  - HIGH - 
-  - CHANGE - 入力変化割り込み
-  - FALLING - 入力立ち上がり割り込み
-  - RISING - 入力立ち下がり割り込み
+- mode: 割り込みの種類を表す次の定数。このうち、利用可能な割り込みの種類は実装定義とする。
+  ~~~
+  enum
+  {
+    LOW,     // LOW信号入力割り込み
+    HIGH,    // LOW信号入力割り込み
+    CHANGE,  // 入力変化割り込み
+    FALLING, // 入力立ち上がり割り込み
+    RISING   // 入力立ち下がり割り込み
+  };
+  ~~~
 ---
 
 #### **detachInterrupt function**
@@ -168,7 +173,7 @@ void detachInterrupt(pin_size_t interruptNumber);
 ```
 
 #### 機能
-
+実装定義の割り込み番号interruptNumberからの割り込みを抑制する。
 #### 引数
 - interruptNumber: 割り込み番号
 
