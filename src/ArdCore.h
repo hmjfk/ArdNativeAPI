@@ -1,6 +1,7 @@
 /*
     ArdNativeAPI - Libraries that enable Arduino to be used as an API.
-    Copyright (C) 2025- Denkousi 
+    Copyright (C) 2025- Denkousi
+    This program is a derivative work of ArduinoCoreAPI-avr.
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,19 +16,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-#if !defined(ARDNATIVE_HPP)
-#define ARDNATIVE_HPP
+// <Arduino.h>の代替。拡張子が.inoでないときに取り込まれる。
+#if !defined(ARDCORE_H) && !defined(Arduino_h)
 
-#ifdef EXTENDED_PIN_MODE
-typedef uint32_t pin_size_t;
-#else
-typedef uint8_t pin_size_t;
-#endif
-
-#include "ArdCore.h"
-#include "ArdDep.h"
-#include "ArdInit.hpp"
-#include "ArdMath.hpp"
-#include "ArdConst.h"
-#include "ArdInterrupt.h"
-#endif // end ARDNATIVE_HPP
+#endif // end ARDCORE_H

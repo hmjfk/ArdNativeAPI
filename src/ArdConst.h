@@ -40,8 +40,8 @@
 #include <stdint.h>
 #include "ArdBorads.h"
 
+#if defined(Arduino_h)
 #warning "The Arduino macro math constant has been deleted. Instead, please use <numbers>."
-
 
 #undef LOW
 #undef HIGH
@@ -72,6 +72,7 @@
 
 #undef LSBFIRST
 #undef MSBFIRST
+#endif // end Arduino_h included
 
 #if !__has_include(<api/Common.h>)
 typedef enum : uint8_t
