@@ -15,14 +15,13 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-// For C++ header
-#if !defined(ARDNATIVE_HPP)
-#define ARDNATIVE_HPP
+// For C header
+#if !defined(ARDNATIVE_H)
+#define ARDNATIVE_H
 
 #if !defined(Arduino_h)
-#include <pins_arduino.h>
-#include <stdint.h>
-
+    #include <pins_arduino.h>
+    #include <stdint.h>
 #endif
 
 #ifdef EXTENDED_PIN_MODE
@@ -33,9 +32,7 @@ typedef uint8_t pin_size_t;
 
 #include "ArdConst.h"
 #include "ArdCore.h"
-#include "ArdDep.h"
 #include "ArdInit.hpp"
 #include "ArdInterrupt.h"
-#include "ArdMath.hpp"
 
-#endif // end ARDNATIVE_HPP
+#endif // end ARDNATIVE_H

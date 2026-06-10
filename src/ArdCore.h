@@ -18,8 +18,13 @@
 */
 // <Arduino.h>の代替。拡張子が.inoでないときに取り込まれる。
 #if !defined(ARDCORE_H) && !defined(Arduino_h)
+
+#ifdef __cplusplus
 #include "HardwareSerial.h"
 #include "WString.h"
+
+extern "C" {
+#endif
 
 void pinMode(pin_size_t pinNumber, PinMode pinMode);
 
@@ -68,4 +73,9 @@ long map(long, long, long, long, long);
 long random(long);
 long random(long, long);
 void randomSeed(unsigned long);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
+
 #endif // end ARDCORE_H
