@@ -64,18 +64,20 @@ void detachInterrupt(pin_size_t interruptNumber);
 // other utility
 void yield();
 
-uint16_t makeWord(uint16_t w);
-uint16_t makeWord(uint8_t h, uint8_t l);
 
 long map(long, long, long, long, long);
 
 // Random Numbers
 long random(long);
-long random(long, long);
-void randomSeed(unsigned long);
 
 #ifdef __cplusplus
 } // extern "C"
+
+uint16_t makeWord(uint16_t w);
+uint16_t makeWord(uint8_t h, uint8_t l);
+
+long random(long, long);
+void randomSeed(unsigned long);
 #endif
 
 #endif // end ARDCORE_H
