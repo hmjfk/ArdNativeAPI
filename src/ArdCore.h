@@ -18,5 +18,52 @@
 */
 // <Arduino.h>の代替。拡張子が.inoでないときに取り込まれる。
 #if !defined(ARDCORE_H) && !defined(Arduino_h)
+void pinMode(pin_size_t pinNumber, PinMode pinMode);
 
+// Digital I/O
+void digitalWrite(pin_size_t pinNumber, PinStatus status);
+PinStatus digitalRead(pin_size_t pinNumber);
+
+// Analog I/O
+int analogRead(pin_size_t pinNumber);
+void analogReadResolution(int res);
+void analogReference(uint8_t mode);
+void analogWrite(pin_size_t pinNumber, int value);
+void analogWriteResolution(int res);
+
+    // times
+    unsigned long millis();
+unsigned long micros();
+void delay(unsigned long);
+void delayMicroseconds(unsigned int us);
+
+// Advanced I/O
+void shiftOut(pin_size_t dataPin, pin_size_t clockPin, BitOrder bitOrder,
+              uint8_t val);
+uint8_t shiftIn(pin_size_t dataPin, pin_size_t clockPin, BitOrder bitOrder);
+unsigned long pulseIn(uint8_t pin, uint8_t state,
+                      unsigned long timeout = 1000000L);
+unsigned long pulseInLong(uint8_t pin, uint8_t state,
+                          unsigned long timeout = 1000000L);
+void tone(uint8_t _pin, unsigned int frequency, unsigned long duration = 0);
+void noTone(uint8_t _pin);
+
+// interrupt
+typedef void (*voidFuncPtr)();
+void attachInterrupt(pin_size_t interruptNumber, voidFuncPtr callback,
+                     PinStatus mode);
+void detachInterrupt(pin_size_t interruptNumber);
+
+// other utility
+void yield();
+
+uint16_t makeWord(uint16_t w);
+uint16_t makeWord(uint8_t h, uint8_t l);
+
+long map(long, long, long, long, long);
+
+// Random Numbers
+long random(long);
+long random(long, long);
+void randomSeed(unsigned long);
 #endif // end ARDCORE_H

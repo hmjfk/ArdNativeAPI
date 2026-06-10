@@ -18,6 +18,11 @@
 #if !defined(ARDNATIVE_HPP)
 #define ARDNATIVE_HPP
 
+#if !defined(Arduino_h)
+    #include <stdint.h>
+    #include <pins_arduino.h>
+#endif
+
 #ifdef EXTENDED_PIN_MODE
 typedef uint32_t pin_size_t;
 #else
