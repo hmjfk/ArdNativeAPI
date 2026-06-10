@@ -16,7 +16,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 // For C++ header
-#if !defined(ARDNATIVE_HPP)
+#if !defined(ARDNATIVE_HPP) && !defined(ARDNATIVE_H)
 #define ARDNATIVE_HPP
 
 #if !defined(Arduino_h)
