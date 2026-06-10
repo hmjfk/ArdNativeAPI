@@ -16,8 +16,13 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 // For C header
+
 #if !defined(ARDNATIVE_HPP) && !defined(ARDNATIVE_H)
 #define ARDNATIVE_H
+
+#if __STDC_VERSION__ > 202311L
+    #error "stdc version old. requisite: C23 or later"
+#endif
 
 #if !defined(Arduino_h)
     #include <pins_arduino.h>
@@ -25,9 +30,9 @@
 #endif
 
 #ifdef EXTENDED_PIN_MODE
-typedef uint32_t pin_size_t;
+    typedef uint32_t pin_size_t;
 #else
-typedef uint8_t pin_size_t;
+    typedef uint8_t pin_size_t;
 #endif
 
 #include "ArdConst.h"
