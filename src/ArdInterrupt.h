@@ -27,7 +27,7 @@
 extern "C" {
 #endif
 
-#if defined(NOT_AN_INTERRUPT)
+#if defined(NOT_AN_INTERRUPT) || defined(ARDCORE_H)
 #undef NOT_AN_INTERRUPT
 constexpr uint8_t NOT_AN_INTERRUPT = -1;
 #endif

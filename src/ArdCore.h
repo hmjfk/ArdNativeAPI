@@ -18,7 +18,7 @@
 */
 // <Arduino.h>の代替。拡張子が.inoでないときに取り込まれる。
 #if !defined(ARDCORE_H) && !defined(Arduino_h)
-
+#define ARDCORE_H
 #ifdef __cplusplus
 #include "HardwareSerial.h"
 #include "WString.h"
