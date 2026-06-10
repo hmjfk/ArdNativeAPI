@@ -34,7 +34,7 @@ int analogRead(pin_size_t pinNumber);
 void analogReadResolution(int res);
 void analogReference(uint8_t mode);
 void analogWrite(pin_size_t pinNumber, int value);
-void analogWriteResolution(int res)
+void analogWriteResolution(int res);
 
 // times
 unsigned long millis();
