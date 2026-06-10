@@ -18,6 +18,9 @@
 */
 // <Arduino.h>の代替。拡張子が.inoでないときに取り込まれる。
 #if !defined(ARDCORE_H) && !defined(Arduino_h)
+#include "HardwareSerial.h"
+#include "WString.h"
+
 void pinMode(pin_size_t pinNumber, PinMode pinMode);
 
 // Digital I/O
@@ -31,15 +34,14 @@ void analogReference(uint8_t mode);
 void analogWrite(pin_size_t pinNumber, int value);
 void analogWriteResolution(int res);
 
-    // times
-    unsigned long millis();
+// times
+unsigned long millis();
 unsigned long micros();
 void delay(unsigned long);
 void delayMicroseconds(unsigned int us);
 
 // Advanced I/O
-void shiftOut(pin_size_t dataPin, pin_size_t clockPin, BitOrder bitOrder,
-              uint8_t val);
+void shiftOut(pin_size_t dataPin, pin_size_t clockPin, BitOrder bitOrder, uint8_t val);
 uint8_t shiftIn(pin_size_t dataPin, pin_size_t clockPin, BitOrder bitOrder);
 unsigned long pulseIn(uint8_t pin, uint8_t state,
                       unsigned long timeout = 1000000L);
