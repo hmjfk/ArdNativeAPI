@@ -67,17 +67,15 @@ void yield();
 
 long map(long, long, long, long, long);
 
-// Random Numbers
-long random(long);
-
 #ifdef __cplusplus
 } // extern "C"
 
 uint16_t makeWord(uint16_t w);
 uint16_t makeWord(uint8_t h, uint8_t l);
 
+// Random Numbers
+long random(long);
 long random(long, long);
 void randomSeed(unsigned long);
 #endif
-
 #endif // end ARDCORE_H
