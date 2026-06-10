@@ -20,7 +20,7 @@
 #if !defined(ARDNATIVE_HPP) && !defined(ARDNATIVE_H)
 #define ARDNATIVE_H
 
-#if __STDC_VERSION__ > 202311L
+#if __STDC_VERSION__ < 202311L
     #error "stdc version old. requisite: C23 or later"
 #endif
 
