@@ -21,8 +21,6 @@
 #define ARDCORE_H
 
 #ifdef __cplusplus
-#include "HardwareSerial.h"
-
 extern "C" {
 #endif
 
