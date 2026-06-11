@@ -21,8 +21,7 @@
 #define ARDNATIVE_H
 
 #if __STDC_VERSION__ < 202311L
-    #error "stdc version old. requisite: C23 or later"
-
+#error "stdc version old. Requirement: C23 or later"
 
 #if !defined(Arduino_h)
     #include <pins_arduino.h>
