@@ -24,8 +24,10 @@
 #else
 
 #if !defined(Arduino_h)
-    #include <pins_arduino.h>
-    #include <stdint.h>
+#include <pins_arduino.h>
+#include <stdint.h>
+#else
+#warning "written a program in '.ino' format? Instead, write it in regular C/C++ file."
 #endif
 
 #ifdef EXTENDED_PIN_MODE
@@ -36,7 +38,7 @@
 
 #include "ArdConst.h"
 #include "ArdCore.h"
-#include "ArdInit.hpp"
+#include "ArdInit.h"
 #include "ArdInterrupt.h"
 
 #endif // end __STDC_VERSION__ guard

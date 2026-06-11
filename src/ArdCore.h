@@ -22,7 +22,6 @@
 
 #ifdef __cplusplus
 #include "HardwareSerial.h"
-#include "WString.h"
 
 extern "C" {
 #endif

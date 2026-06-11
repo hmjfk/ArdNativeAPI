@@ -22,7 +22,8 @@
 #if !defined(Arduino_h)
 #include <pins_arduino.h>
 #include <stdint.h>
-
+#else
+#warning "written a program in '.ino' format? Instead, write it in regular C/C++ file."
 #endif
 
 #ifdef EXTENDED_PIN_MODE
@@ -34,7 +35,7 @@ typedef uint8_t pin_size_t;
 #include "ArdConst.h"
 #include "ArdCore.h"
 #include "ArdDep.h"
-#include "ArdInit.hpp"
+#include "ArdInit.h"
 #include "ArdInterrupt.h"
 #include "ArdMath.hpp"
 

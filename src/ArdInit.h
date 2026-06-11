@@ -40,10 +40,6 @@
 
 #if !defined(ARDINIT_HPP)
 #define ARDINIT_HPP
-/*
-Currently, since we’re using GNU C++17, the file extension is “.hpp,” but once Arduino moves to C23,
-we plan to switch it to “.h.”
-*/
 
 // Weak empty variant initialization function.
 // May be redefined by variant files.
