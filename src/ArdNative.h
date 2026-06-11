@@ -22,7 +22,7 @@
 
 #if __STDC_VERSION__ < 202311L
     #error "stdc version old. requisite: C23 or later"
-#endif
+
 
 #if !defined(Arduino_h)
     #include <pins_arduino.h>
@@ -40,4 +40,5 @@
 #include "ArdInit.hpp"
 #include "ArdInterrupt.h"
 
+#endif // end __STDC_VERSION__ guard
 #endif // end ARDNATIVE_H
