@@ -22,6 +22,7 @@
 
 #if __STDC_VERSION__ < 202311L
 #error "stdc version old. Requirement: C23 or later"
+#else
 
 #if !defined(Arduino_h)
     #include <pins_arduino.h>
