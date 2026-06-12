@@ -55,8 +55,6 @@
 typedef bool                    boolean;
 [[deprecated]] typedef uint8_t  byte;
 
-struct [[deprecated("Instead of Arduino's String, please use the etl::string from <etl/string.h>.")]] String;
-
 #if defined(ARDUINO_ARCH_ESP32)
 [[deprecated]] typedef unsigned int word;
 #else

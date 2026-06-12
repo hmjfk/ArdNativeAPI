@@ -21,6 +21,12 @@
 #define ARDCORE_H
 
 #ifdef __cplusplus
+<<<<<<< HEAD
+=======
+#include "HardwareSerial.h"
+#include "WString.h"
+
+>>>>>>> parent of f758f80 (Update)
 extern "C" {
 #endif
 
