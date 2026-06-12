@@ -21,12 +21,10 @@
 #define ARDCORE_H
 
 #ifdef __cplusplus
-<<<<<<< HEAD
-=======
 #include "HardwareSerial.h"
-#include "WString.h"
-
->>>>>>> parent of f758f80 (Update)
+#if defined(String_class_h)
+#warning "Arduino's String class is deprecated. Instead, use the etl::string from <etl/string.h>."
+#endif
 extern "C" {
 #endif
 
