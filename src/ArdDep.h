@@ -97,6 +97,10 @@ inline int toUpperCase(int c);
 #endif
 // C++標準で定義される関数などはマクロを外して非推奨。
 
+#if defined(String_class_h)
+#warning "Arduino's String class is deprecated. Instead, use the etl::string from <etl/string.h>."
+#endif
+
 #if defined(abs)
 #undef abs
 #warning "Instead of Arduino's abs, use std::abs from <cstdlib> or <stdlib.h>."

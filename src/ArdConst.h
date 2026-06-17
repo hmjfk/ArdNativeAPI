@@ -40,13 +40,10 @@
 #include <stdint.h>
 #include "ArdBorads.h"
 
-#if defined(Arduino_h)
-#warning "The Arduino macro math constant has been deleted. Instead, please use <numbers>."
+#if defined(Arduino_h) || !defined(DEG_TO_RAD)
 
 #undef LOW
 #undef HIGH
-#undef SERIAL
-#undef DISPLAY
 #undef CHANGE
 #undef FALLING
 #undef RISING
@@ -57,24 +54,12 @@
 #undef INPUT_PULLDOWN
 #undef OUTPUT_OPENDRAIN
 
-#undef PI
-#undef HALF_PI
-#undef TWO_PI
-#undef TWO_PI
-#undef DEG_TO_RAD
-#undef RAD_TO_DEG
-#undef EULER
-
-#undef DEC
-#undef HEX
-#undef OCT
-#undef BIN
-
 #undef LSBFIRST
 #undef MSBFIRST
-#endif // end Arduino_h included
 
-#if !__has_include(<api/Common.h>)
+#undef SERIAL
+#undef DISPLAY
+
 typedef enum : uint8_t
 {
   LOW     = 0,
@@ -98,13 +83,19 @@ typedef enum
   LSBFIRST = 0,
   MSBFIRST = 1,
 } BitOrder;
-#endif
 
 enum : bool
 {
   SERIAL = false,
   DISPLAY = true,
 };
+#endif
+
+#if defined(DEC)
+#undef DEC
+#undef HEX
+#undef OCT
+#undef BIN
 
 enum
 {
@@ -113,6 +104,19 @@ enum
   OCT = 8,
   BIN = 2
 };
+#endif
+
+#if defined(DEG_TO_RAD)
+#warning "The Arduino macro math constant has been deleted. Instead, please use <numbers>."
+#undef PI
+#undef HALF_PI
+#undef TWO_PI
+#undef TWO_PI
+#undef DEG_TO_RAD
+#undef RAD_TO_DEG
+#undef EULER
+#endif
+
 
 // LED_BUILTIN
 #if defined(LED_BUILTIN)

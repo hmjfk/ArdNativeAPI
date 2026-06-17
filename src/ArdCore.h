@@ -21,10 +21,6 @@
 #define ARDCORE_H
 
 #ifdef __cplusplus
-#include "HardwareSerial.h"
-#if defined(String_class_h)
-#warning "Arduino's String class is deprecated. Instead, use the etl::string from <etl/string.h>."
-#endif
 extern "C" {
 #endif
 
