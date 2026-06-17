@@ -39,7 +39,7 @@
 #if !defined(ARDMATH_HPP) && defined(__cplusplus)
 #define ARDMATH_HPP
 
-#if defined(__cpp_lib_math_constants)
+#if defined(__cpp_lib_math_constants) || __has_include(<numbers>)
 #include<numbers>
 #else
 namespace std::numbers
