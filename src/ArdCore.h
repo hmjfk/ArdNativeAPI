@@ -17,7 +17,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 // <Arduino.h>の代替。拡張子が.inoでないときに取り込まれる。
-#if !defined(ARDCORE_H) && !defined(Arduino_h) && !defined(ARDUINO_ARCH_ESP32)
+#if !defined(ARDCORE_H) && !defined(Arduino_h) && !defined(SDKCONFIG_H)
 #define ARDCORE_H
 
 #include "ArdConst.h"
