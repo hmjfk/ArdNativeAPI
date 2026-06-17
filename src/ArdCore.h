@@ -20,8 +20,18 @@
 #if !defined(ARDCORE_H) && !defined(Arduino_h)
 #define ARDCORE_H
 
+#include "ArdConst.h"
+#include <stdint.h>
+
+
 #ifdef __cplusplus
 extern "C" {
+#endif
+
+#ifdef EXTENDED_PIN_MODE
+typedef uint32_t pin_size_t;
+#else
+typedef uint8_t pin_size_t;
 #endif
 
 void pinMode(pin_size_t pinNumber, PinMode pinMode);
