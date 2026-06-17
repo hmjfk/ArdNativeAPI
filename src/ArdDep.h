@@ -104,12 +104,12 @@ inline int toUpperCase(int c);
 
 #if defined(max)
 #undef max
-#warning "Instead of Arduino's abs, use std::max from <algorithm>."
+#warning "Instead of Arduino's max, use std::max from <algorithm>."
 #endif
 
 #if defined(min)
 #undef min
-#warning "Instead of Arduino's abs, use std::min from <algorithm>."
+#warning "Instead of Arduino's min, use std::min from <algorithm>."
 #endif
 [[deprecated("It`s advisable to define the main function.")]] void setup();
 [[deprecated("Please use an infinite loop statement.")]] void loop();
