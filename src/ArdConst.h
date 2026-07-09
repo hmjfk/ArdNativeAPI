@@ -40,7 +40,7 @@
 #include <stdint.h>
 #include "ArdBorads.h"
 
-#if defined(OUTPUT_OPENDRAIN) ||  defined(ARDNATIVE_SRC)
+#if defined(OUTPUT_OPENDRAIN) || !defined(ARDNATIVE_HPP) && !defined(ARDNATIVE_H)
 
 #undef LOW
 #undef HIGH
