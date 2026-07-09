@@ -25,6 +25,7 @@
 #warning "written a program in '.ino' format? Instead, write it in regular C/C++ file."
 #endif
 
+// In the internal source, pleasedefine macro ARDNATIVE_SRC.
 #include "ArdConst.h"
 #include "ArdCore.h"
 #include "ArdDep.h"

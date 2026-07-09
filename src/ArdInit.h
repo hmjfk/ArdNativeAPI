@@ -41,19 +41,6 @@
 #if !defined(ARDINIT_HPP)
 #define ARDINIT_HPP
 
-// Weak empty variant initialization function.
-// May be redefined by variant files.
-[[gnu::weak]] void initVariant();
-[[gnu::weak]] void initVariant()  { }
-
-[[gnu::weak]] void setupUSB();
-[[gnu::weak]] void setupUSB() { }
-
-#if defined(__ZEPHYR__)
-[[gnu::weak]] void __loopHook();
-[[gnu::weak]] void __loopHook() { }
-#endif
-
 #if defined(__cplusplus)
 extern "C" {
 #endif
@@ -64,6 +51,5 @@ void serialUpdate();
 #if defined(__cplusplus)
 }
 #endif
-
 
 #endif // end ARDINIT_H
