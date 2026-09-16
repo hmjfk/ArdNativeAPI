@@ -40,7 +40,7 @@
 #include <stdint.h>
 #include "ArdBorads.h"
 
-#if defined(OUTPUT_OPENDRAIN) || !defined(ARDNATIVE_HPP) && !defined(ARDNATIVE_H)
+#if defined(Arduino_h) || !defined(DEG_TO_RAD)
 
 #undef LOW
 #undef HIGH
@@ -106,7 +106,7 @@ enum
 };
 #endif
 
-#if defined(RAD_TO_DEG)
+#if defined(DEG_TO_RAD)
 #warning "The Arduino macro math constant has been deleted. Instead, please use <numbers>."
 #undef PI
 #undef HALF_PI

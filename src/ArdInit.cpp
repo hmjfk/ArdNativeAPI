@@ -1,8 +1,6 @@
 /*
     ArdNativeAPI - Libraries that enable Arduino to be used as an API.
-    Copyright (c) 2005-2013 Arduino Team.  All right reserved.
-    Copyright (C) 2025- Denkousi
-
+    Copyright (C) 2025- Denkousi 
     This program is a derivative work of ArduinoCoreAPI-avr.
 
     This program is free software: you can redistribute it and/or modify
@@ -19,52 +17,35 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 /*
-Original Source:
-https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/main.cpp
-https://github.com/arduino/ArduinoCore-samd/blob/master/cores/arduino/main.cpp
-https://github.com/arduino/ArduinoCore-zephyr/blob/main/cores/arduino/main.cpp
+  Original License:
+  
+  main.cpp - Main loop for Arduino sketches
+  Copyright (c) 2005-2013 Arduino Team.  All right reserved.
+
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public
+  License along with this library; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-// 
-// #define ARDNATIVE_SRC
-#include "Ardinit.h"
-#include "ArdCore.h"
+#include<Arduino.h>
+#include"Ardinit.h"
 
-// <Arduino.h> cannot be included. instead, manual decl.
+extern "C" {
 
-class USBDeviceClass
-{
-public:
-  // other menber function is unnecessary. That's why deleted it.
-  void init();
-  bool attach();
-
-private:
-  bool initialized; // ABI portability
-};
-extern USBDeviceClass USBDevice;
-
-[[gnu::weak]] void serialEventRun();
-// Weak empty variant initialization function.
-// May be redefined by variant files.
-[[gnu::weak]] void initVariant();
-[[gnu::weak]] void initVariant() {}
-
-[[gnu::weak]] void setupUSB();
-[[gnu::weak]] void setupUSB() {}
-
-#if defined(__ZEPHYR__)
-[[gnu::weak]] void __loopHook();
-[[gnu::weak]] void __loopHook() {}
-#endif
-
-extern "C"
-{
-
-extern void __libc_init_array(); // for ArduinoCore-samd
-extern void init();
+// for ArduinoCore-samd
+void __libc_init_array(void);
 
 #if defined (__ZEPHYR__)
-    void __loopHook();
+void __loopHook();
     #include "zephyr/kernel.h"
     #ifdef CONFIG_LLEXT
         #include <zephyr/llext/symbol.h>
@@ -74,13 +55,21 @@ extern void init();
 
 void initCore()
 {
-    init();
+#if defined (__ZEPHYR__)
+    #if(DT_NODE_HAS_PROP(DT_PATH(zephyr_user), cdc_acm) &&                                            \
+	(CONFIG_USB_CDC_ACM || CONFIG_USBD_CDC_ACM_CLASS))
+  	Serial.begin(115200);
+    #endif
+#else
+  init();
+#endif
 
 #if defined(ARDUINO_ARCH_SAMD)
     __libc_init_array();
-#endif
+#endif // end runtime part
+
     initVariant();
-#if defined(ARDUINO_ARCH_SAMD)
+    #if defined(ARDUINO_ARCH_SAMD)
     delay(1);
 #endif
 #if defined(USBCON)
@@ -89,12 +78,21 @@ void initCore()
     #endif
     USBDevice.attach();
 #endif
+
+#if defined(__ZEPHYR__) && defined (CONFIG_MULTITHREADING)
+	start_static_threads();
+#endif
 }
 
 void serialUpdate()
 {
-    if(serialEventRun)
-        serialEventRun();
+#if defined(__ZEPHYR__)
+    __loopHook();
+#else
+
+  if (serialEventRun)
+	  	serialEventRun();
+#endif
 }
 
 } // end extern "C"
