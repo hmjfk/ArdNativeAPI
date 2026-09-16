@@ -40,7 +40,7 @@
 #include <stdint.h>
 #include "ArdBorads.h"
 
-#if defined(Arduino_h) || !defined(DEG_TO_RAD)
+#if (defined(Arduino_h) || !defined(DEG_TO_RAD)) && !defined(ARDUINO_ARCH_SAMD)
 
 #undef LOW
 #undef HIGH

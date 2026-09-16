@@ -30,7 +30,6 @@
 #endif
 
 #include "ArdConst.h"
-#include "ArdCore.h"
 #include "ArdDep.h"
 #include "ArdInit.h"
 #include "ArdInterrupt.h"
