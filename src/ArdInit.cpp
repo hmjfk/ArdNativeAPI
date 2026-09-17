@@ -69,9 +69,11 @@ void initCore()
 #endif // end runtime part
 
     initVariant();
-    #if defined(ARDUINO_ARCH_SAMD)
+
+#if defined(ARDUINO_ARCH_SAMD)
     delay(1);
 #endif
+
 #if defined(USBCON)
     #if defined(ARDUINO_ARCH_SAMD)
     USBDevice.init();
