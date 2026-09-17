@@ -19,12 +19,15 @@
 #if !defined(ARDNATIVE_HPP) && !defined(ARDNATIVE_H)
 #define ARDNATIVE_HPP
 
+// 将来<Arduino.h>に依存しなくなったら有効にする。
+/*
 #if !defined(Arduino_h)
 #include <pins_arduino.h>
 #else
 #warning "written a program in '.ino' format? Instead, write it in regular C/C++ file."
 #endif
-
+*/
+#include <Arduino.h>
 #include "ArdConst.h"
 #include "ArdDep.h"
 #include "ArdInit.h"

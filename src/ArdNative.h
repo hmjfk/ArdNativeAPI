@@ -23,11 +23,16 @@
 #error "stdc version old. Requirement: C23 or later"
 #else
 
+#include <Arduino.h>
+
+// 将来<Arduino.h>に依存しなくなったら有効にする。
+/*
 #if !defined(Arduino_h)
 #include <pins_arduino.h>
 #else
-#warning "written a program in '.ino' format? Instead, write it in regular C/C++ file."
-#endif
+#warning "written a program in '.ino' format? Instead, write it in regular C/C++
+file." #endif
+*/
 
 #include "ArdConst.h"
 #include "ArdDep.h"
